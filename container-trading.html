@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Trading & Leasing | MMI Logitek</title>
+    <meta name="description" content="Cost-effective container trading and leasing solutions for global logistics, storage, and custom applications.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .logo-text h2 {
+            font-size: 1.5rem;
+            color: #1e3c72;
+            font-weight: 700;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-menu li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu li a:hover::after,
+        .nav-menu li a.active::after {
+            width: 100%;
+        }
+        
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            color: #ff6b35;
+        }
+        
+        .hero {
+            margin-top: 90px;
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.75) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            color: white;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .content-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+        
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .content-container h2 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .content-container h2 span {
+            color: #ff6b35;
+        }
+        
+        .content-container h3 {
+            font-size: 1.8rem;
+            color: #1e3c72;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+        
+        .content-container p {
+            color: #666;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .content-container ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .content-container ul li {
+            color: #666;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .content-container ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .highlight-box {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #ff6b35;
+            margin: 2rem 0;
+        }
+        
+        .cta-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
+        }
+        
+        .footer {
+            background: #0a1929;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .content-container h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg" alt="MMI Logitek" class="logo-img">
+                <div class="logo-text">
+                    <h2>MMI Logitek</h2>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services" class="active">Services</a></li>
+                <li><a href="index.html#agency">Agency Network</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-426Z-8a81e9bb-chat-image-1767098879407-3.jpg" alt="Container Trading & Leasing" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Container Trading & Leasing</h1>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="content-container">
+            <p>At MMI Logitek Fzco, we offer cost-effective container trading and leasing solutions tailored for global logistics, storage, and custom-built applications. Whether you need containers for short-term use, long-term projects, or permanent ownership, we provide a wide range of container sizes and types to suit your specific needs.</p>
+
+            <h2>Container <span>Leasing Services</span></h2>
+            <p>We specialize in leasing high-quality shipping containers for:</p>
+            <ul>
+                <li>International cargo movement</li>
+                <li>Temporary storage solutions</li>
+                <li>Industrial and construction site needs</li>
+                <li>Government and private sector logistics</li>
+            </ul>
+
+            <h3>Our container leasing services are ideal for:</h3>
+            <ul>
+                <li>Importers & Exporters</li>
+                <li>Freight forwarders & NVOCCs</li>
+                <li>Logistics companies</li>
+                <li>Project-based and seasonal users</li>
+            </ul>
+            <p>We offer flexible leasing terms, competitive pricing, and timely availability across key locations.</p>
+
+            <h2>Container <span>Trading</span></h2>
+            <p>Looking to buy your own container? We deal in used and new containers, offering units that meet international ISO standards with options like:</p>
+            <ul>
+                <li>Dry containers (20ft, 40ft, High Cube)</li>
+                <li>Open-top and flat-rack containers</li>
+                <li>Reefer (refrigerated) containers</li>
+                <li>Specialized containers for specific cargo needs</li>
+            </ul>
+            <p>Our container units are thoroughly inspected for quality, durability, and compliance.</p>
+
+            <h2>Porta Cabin <span>Conversions</span></h2>
+            <p>We also offer container modifications and Porta Cabin conversions customized to your design requirements. These versatile structures are ideal for:</p>
+            <ul>
+                <li>Mobile offices</li>
+                <li>Site accommodations</li>
+                <li>Portable storage units</li>
+                <li>Emergency shelters</li>
+            </ul>
+            <p>We deliver tailor-made cabin solutions using robust, weather-resistant containers to meet your exact specifications.</p>
+
+            <div class="highlight-box">
+                <h3>Why Choose Our Service</h3>
+                <ul>
+                    <li>Quality-assured containers for lease or sale</li>
+                    <li>Flexible leasing models to match your budget and project duration</li>
+                    <li>Custom-built Porta Cabins with client-specified layouts</li>
+                    <li>Reliable delivery and support across all major trade hubs</li>
+                    <li>End-to-end service from selection to delivery and conversion</li>
+                </ul>
+            </div>
+
+            <p>MMI Logitek Fzco is your trusted partner for container solutions. Whether you're looking to lease for a short-term project or invest in containers for the long haul, we provide efficient, affordable, and customized container services across the globe.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Get in Touch</h2>
+        <a href="index.html#contact" class="cta-button">Contact Us</a>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 MMI Logitek Fzco. All rights reserved.</p>
+    </footer>
+</body>
+</html>
