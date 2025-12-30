@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMI Logitek Fzco | Global Shipping & Logistics Solutions</title>
+    <title>MMI Logitek | Global Shipping & Logistics Solutions</title>
     <meta name="description" content="Trusted global shipping and logistics solutions. NVOCC, Freight Forwarding, Container Trading & Leasing services worldwide. 10+ years of excellence.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -400,9 +400,15 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
         
+        .service-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
         .service-icon {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            padding: 3rem;
+            padding: 2rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -426,7 +432,7 @@
         
         .service-icon h3 {
             color: white;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             position: relative;
             z-index: 2;
         }
@@ -438,21 +444,6 @@
         .service-content p {
             color: #666;
             line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-link {
-            color: #ff6b35;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s ease;
-        }
-        
-        .service-link:hover {
-            gap: 1rem;
         }
         
         /* Agency Network Section */
@@ -512,63 +503,10 @@
         }
         
         .network-card p {
-            opacity: 0.9;
-            line-height: 1.8;
-        }
-        
-        /* Gallery Section */
-        .gallery-section {
-            padding: 6rem 2rem;
-            background: #f8f9fa;
-        }
-        
-        .gallery-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .gallery-item {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            cursor: pointer;
-            height: 350px;
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(30, 60, 114, 0.9), transparent);
-            padding: 2rem;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-        }
-        
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
-        
-        .gallery-overlay h3 {
             color: white;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            opacity: 0.95;
+            line-height: 1.8;
+            font-size: 1.05rem;
         }
         
         /* Why Choose Section */
@@ -656,8 +594,20 @@
         }
         
         .contact-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: #ff6b35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
         }
         
         .contact-card h3 {
@@ -680,13 +630,13 @@
         .footer {
             background: #0a1929;
             color: white;
-            padding: 3rem 2rem;
+            padding: 1.5rem 2rem;
             text-align: center;
         }
         
         .footer p {
             opacity: 0.8;
-            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
         }
         
         /* Responsive */
@@ -734,8 +684,7 @@
                 font-size: 2rem;
             }
             
-            .services-grid,
-            .gallery-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -746,9 +695,9 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo-section">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg" alt="MMI Logitek Fzco" class="logo-img">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg" alt="MMI Logitek" class="logo-img">
                 <div class="logo-text">
-                    <h2>MMI Logitek Fzco</h2>
+                    <h2>MMI Logitek</h2>
                 </div>
             </div>
             <ul class="nav-menu" id="navMenu">
@@ -764,12 +713,12 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-042Z-0a836d50-chat-image-1767098879023-0.jpg" alt="MMI Logitek Fzco" class="hero-bg">
+        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-042Z-0a836d50-chat-image-1767098879023-0.jpg" alt="MMI Logitek" class="hero-bg">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">Trusted Global<br>Shipping & Logistics</h1>
             <p class="hero-subtitle">Seamless, reliable, and cost-effective cargo transport solutions across major international trade routes</p>
-            <a href="#contact" class="hero-cta">Get Started →</a>
+            <a href="#contact" class="hero-cta">Let Us Know Your Requirement</a>
         </div>
     </section>
 
@@ -835,66 +784,66 @@
         </div>
         <div class="services-grid">
             <div class="service-card">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-308Z-804d47e3-chat-image-1767098879286-2.jpg" alt="NVOCC Services" class="service-image">
                 <div class="service-icon">
                     <h3>NVOCC</h3>
                 </div>
                 <div class="service-content">
                     <p>As a proud NVOCC, we offer flexible, efficient ocean freight services akin to traditional steamship lines for today's global trade.</p>
-                    <a href="#contact" class="service-link">Read More →</a>
                 </div>
             </div>
             <div class="service-card">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-426Z-8a81e9bb-chat-image-1767098879407-3.jpg" alt="Container Trading" class="service-image">
                 <div class="service-icon">
                     <h3>Container Trading & Leasing</h3>
                 </div>
                 <div class="service-content">
                     <p>We offer cost-effective container trading and leasing for global logistics, storage, and custom applications, with diverse sizes for all needs.</p>
-                    <a href="#contact" class="service-link">Read More →</a>
                 </div>
             </div>
             <div class="service-card">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-201Z-9cb540c4-chat-image-1767098879181-1.jpg" alt="Container Domestication" class="service-image">
                 <div class="service-icon">
                     <h3>Container Domestication</h3>
                 </div>
                 <div class="service-content">
                     <p>Container domestication converts international shipping containers for local use, legally nationalizing them for a country's internal logistics network.</p>
-                    <a href="#contact" class="service-link">Read More →</a>
                 </div>
             </div>
             <div class="service-card">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-042Z-0a836d50-chat-image-1767098879023-0.jpg" alt="Freight Forwarding" class="service-image">
                 <div class="service-icon">
                     <h3>Freight Forwarding</h3>
                 </div>
                 <div class="service-content">
                     <p>As trusted freight forwarders, we streamline transportation for importers, exporters, and businesses from origin to destination.</p>
-                    <a href="#contact" class="service-link">Read More →</a>
                 </div>
             </div>
             <div class="service-card">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-308Z-804d47e3-chat-image-1767098879286-2.jpg" alt="Transportation" class="service-image">
                 <div class="service-icon">
                     <h3>Transportation</h3>
                 </div>
                 <div class="service-content">
                     <p>Transportation is the backbone of logistics. We provide efficient, secure, cost-effective solutions tailored to your global shipping needs.</p>
-                    <a href="#contact" class="service-link">Read More →</a>
                 </div>
             </div>
             <div class="service-card">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-426Z-8a81e9bb-chat-image-1767098879407-3.jpg" alt="Customs Clearance" class="service-image">
                 <div class="service-icon">
                     <h3>Customs Clearance</h3>
                 </div>
                 <div class="service-content">
                     <p>Customs clearance is vital for international trade. We ensure smooth, accurate, and compliant import/export customs services.</p>
-                    <a href="#contact" class="service-link">Read More →</a>
                 </div>
             </div>
             <div class="service-card">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-201Z-9cb540c4-chat-image-1767098879181-1.jpg" alt="Vessel Operating Agent" class="service-image">
                 <div class="service-icon">
                     <h3>Vessel Operating Agent</h3>
                 </div>
                 <div class="service-content">
                     <p>We specialize in tailored vessel operating agency services, leveraging local partner networks and port expertise for seamless global operations.</p>
-                    <a href="#contact" class="service-link">Read More →</a>
                 </div>
             </div>
         </div>
@@ -921,33 +870,6 @@
                 <div class="network-card">
                     <h3>Global Coverage</h3>
                     <p>European, African, and US sectors</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery-section">
-        <div class="section-header">
-            <h2>Our <span>Operations</span></h2>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-308Z-804d47e3-chat-image-1767098879286-2.jpg" alt="Container Loading">
-                <div class="gallery-overlay">
-                    <h3>Port Operations</h3>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-426Z-8a81e9bb-chat-image-1767098879407-3.jpg" alt="Container Handling">
-                <div class="gallery-overlay">
-                    <h3>Container Handling</h3>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-201Z-9cb540c4-chat-image-1767098879181-1.jpg" alt="Container Domestication">
-                <div class="gallery-overlay">
-                    <h3>Container Domestication</h3>
                 </div>
             </div>
         </div>
@@ -990,16 +912,20 @@
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="contact-container">
-            <h2>Streamline Your Global Shipping Today!</h2>
+            <h2>Get in Touch</h2>
             <p style="font-size: 1.2rem; color: #666;">Ready to optimize your logistics? Contact us for a customized shipping solution.</p>
             <div class="contact-grid">
                 <div class="contact-card">
-                    <div class="contact-icon">📧</div>
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </div>
                     <h3>Email Us</h3>
                     <a href="mailto:Darshan@millenium.co.in">Darshan@millenium.co.in</a>
                 </div>
                 <div class="contact-card">
-                    <div class="contact-icon">📱</div>
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    </div>
                     <h3>Call Us</h3>
                     <a href="tel:+971585881060">+971 58 588 1060</a>
                 </div>
@@ -1010,7 +936,6 @@
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2026 MMI Logitek Fzco. All rights reserved.</p>
-        <p>Trusted Global Shipping & Logistics Solutions | 10+ Years of Excellence</p>
     </footer>
 
     <script>
