@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMI Logitek Fzco - Dubai | Global Shipping & Logistics Solutions</title>
-    <meta name="description" content="Trusted global shipping and logistics solutions in Dubai. NVOCC, Freight Forwarding, Container Trading & Leasing services worldwide. 10+ years of excellence.">
+    <title>MMI Logitek Fzco | Global Shipping & Logistics Solutions</title>
+    <meta name="description" content="Trusted global shipping and logistics solutions. NVOCC, Freight Forwarding, Container Trading & Leasing services worldwide. 10+ years of excellence.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,474 +16,847 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
+            overflow-x: hidden;
         }
         
-        .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
         
-        .header-content {
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
         }
         
-        .logo {
-            height: 80px;
+        .logo-img {
+            height: 60px;
             width: auto;
-            background: white;
-            padding: 0.5rem;
-            border-radius: 8px;
         }
         
-        .header-text h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+        .logo-text h2 {
+            font-size: 1.5rem;
+            color: #1e3c72;
+            font-weight: 700;
         }
         
-        .header-text p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .hero {
-            position: relative;
+        .nav-cta {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
             color: white;
-            padding: 0;
-            text-align: center;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 90px;
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
             overflow: hidden;
         }
         
-        .hero-image {
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 600px;
+            height: 100%;
             object-fit: cover;
-            display: block;
+            animation: zoomIn 20s ease-in-out infinite alternate;
+        }
+        
+        @keyframes zoomIn {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
         
         .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(rgba(30, 60, 114, 0.7), rgba(42, 82, 152, 0.7));
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.75) 100%);
         }
         
         .hero-content {
+            position: relative;
             z-index: 2;
-            padding: 2rem;
-        }
-        
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            line-height: 1.8;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: #ff6b35;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
             color: white;
-            padding: 1rem 2.5rem;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.2s ease;
+            max-width: 700px;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.1rem;
-            transition: background 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            animation: fadeInUp 1.4s ease;
         }
         
-        .cta-button:hover {
-            background: #e55a2b;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
         }
         
-        .stats {
+        /* Featured Services */
+        .featured-services {
+            padding: 4rem 2rem;
             background: #f8f9fa;
-            padding: 3rem 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
         }
         
-        .stats-grid {
+        .featured-grid {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            text-align: center;
         }
         
-        .stat-item h3 {
-            font-size: 3rem;
+        .featured-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .featured-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .featured-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+        }
+        
+        .featured-card h3 {
+            font-size: 1.5rem;
             color: #1e3c72;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
         
-        .stat-item p {
+        .featured-card p {
             color: #666;
-            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
         
-        .image-showcase {
-            padding: 4rem 0;
+        .know-more {
+            color: #ff6b35;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+        
+        .know-more:hover {
+            gap: 1rem;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 6rem 2rem;
             background: white;
         }
         
-        .showcase-grid {
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
         
-        .showcase-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .showcase-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
-        }
-        
-        .showcase-item img {
+        .about-image {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            animation: float 6s ease-in-out infinite;
         }
         
-        .services {
-            padding: 4rem 0;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .about-content h2 {
+            font-size: 3rem;
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .about-content h2 span {
+            color: #ff6b35;
+        }
+        
+        .about-content p {
+            color: #666;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+        
+        .stats-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            animation: fadeInUp 1s ease;
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 6rem 2rem;
             background: #f8f9fa;
         }
         
-        .section-title {
+        .section-header {
             text-align: center;
-            font-size: 2.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 3rem;
             color: #1e3c72;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .section-header h2 span {
+            color: #ff6b35;
         }
         
         .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
         
         .service-card {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            cursor: pointer;
         }
         
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
         
-        .service-card h3 {
+        .service-icon {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .service-icon h3 {
+            color: white;
+            font-size: 1.8rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-content {
+            padding: 2rem;
+        }
+        
+        .service-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-link {
+            color: #ff6b35;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+        
+        .service-link:hover {
+            gap: 1rem;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+        
+        .gallery-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            cursor: pointer;
+            height: 350px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(30, 60, 114, 0.9), transparent);
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Why Choose Section */
+        .why-choose {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+        
+        .features-grid {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .feature-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .feature-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+        
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-container h2 {
+            font-size: 3rem;
             color: #1e3c72;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            color: white;
+            transition: all 0.4s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(30, 60, 114, 0.3);
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
         
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
-        }
-        
-        .why-choose {
-            background: white;
-            padding: 4rem 0;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .feature-item {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #ff6b35;
-        }
-        
-        .feature-item h3 {
-            color: #1e3c72;
-            margin-bottom: 0.5rem;
-        }
-        
-        .feature-item p {
-            color: #666;
-        }
-        
-        .contact {
-            padding: 4rem 0;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            text-align: center;
-        }
-        
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .contact-item {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 8px;
-        }
-        
-        .contact-item h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-        
-        .contact-item a {
+        .contact-card a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            transition: opacity 0.3s ease;
         }
         
-        .contact-item a:hover {
+        .contact-card a:hover {
             opacity: 0.8;
         }
         
+        /* Footer */
         .footer {
-            background: #1a2f5a;
+            background: #0a1929;
             color: white;
+            padding: 3rem 2rem;
             text-align: center;
-            padding: 2rem 0;
         }
         
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
+            .hero-title {
+                font-size: 2.5rem;
             }
             
-            .logo {
-                height: 60px;
+            .hero-subtitle {
+                font-size: 1.2rem;
             }
             
-            .header-text h1 {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header h2,
+            .about-content h2,
+            .contact-container h2 {
                 font-size: 2rem;
             }
             
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-image {
-                height: 400px;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .showcase-item img {
-                height: 250px;
+            .services-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg" alt="MMI Logitek Fzco Logo" class="logo">
-                <div class="header-text">
-                    <h1>MMI Logitek Fzco</h1>
-                    <p>Your Trusted Partner in Global Shipping & Logistics</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg" alt="MMI Logitek Fzco" class="logo-img">
+                <div class="logo-text">
+                    <h2>MMI Logitek Fzco</h2>
                 </div>
             </div>
+            <a href="#contact" class="nav-cta">Get Quote</a>
         </div>
-    </header>
+    </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-042Z-0a836d50-chat-image-1767098879023-0.jpg" alt="MMI Logitek Fzco Container Transport" class="hero-image">
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h2>Trusted Global Shipping & Logistics Solutions</h2>
-                <p>MMI Logitek Fzco is a trusted name in the global shipping and logistics industry with over 10 years of excellence. We specialize in seamless, reliable, and cost-effective cargo transport solutions across major international trade routes.</p>
-                <a href="#contact" class="cta-button">Get a Quote</a>
+        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-042Z-0a836d50-chat-image-1767098879023-0.jpg" alt="MMI Logitek Fzco" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Trusted Global<br>Shipping & Logistics</h1>
+            <p class="hero-subtitle">Seamless, reliable, and cost-effective cargo transport solutions across major international trade routes</p>
+            <a href="#contact" class="hero-cta">Get Started →</a>
+        </div>
+    </section>
+
+    <!-- Featured Services -->
+    <section class="featured-services">
+        <div class="featured-grid">
+            <div class="featured-card">
+                <h3>NVOCC Services</h3>
+                <p>With over 10 years of proven expertise in flexible, efficient ocean freight services for global trade.</p>
+                <a href="#services" class="know-more">Know More →</a>
+            </div>
+            <div class="featured-card">
+                <h3>Container Trading & Leasing</h3>
+                <p>Whether you're looking to lease for a short-term project or invest in containers for the long haul.</p>
+                <a href="#services" class="know-more">Know More →</a>
+            </div>
+            <div class="featured-card">
+                <h3>Container Domestication</h3>
+                <p>Trusted name in container domestication, with a proven track record and expertise built over years.</p>
+                <a href="#services" class="know-more">Know More →</a>
             </div>
         </div>
     </section>
 
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>10+</h3>
-                    <p>Years of Excellence</p>
-                </div>
-                <div class="stat-item">
-                    <h3>5000+</h3>
-                    <p>Happy Clients</p>
-                </div>
-                <div class="stat-item">
-                    <h3>2000+</h3>
-                    <p>Containers Delivered</p>
-                </div>
-                <div class="stat-item">
-                    <h3>9+</h3>
-                    <p>Country Presence</p>
-                </div>
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-308Z-804d47e3-chat-image-1767098879286-2.jpg" alt="MMI Logitek Operations" class="about-image">
+            <div class="about-content">
+                <h2><span>Trusted</span> Global Shipping & Logistics Solutions</h2>
+                <p>MMI Logitek Fzco is a trusted name in the global shipping and logistics industry with over 10 years of excellence. As a leading NVOCC and Freight Forwarding company, we specialize in providing seamless, reliable, and cost-effective cargo transport solutions across major international trade routes.</p>
+                <p>Whether you're shipping to or from Jebel Ali, Dammam, Port Klang, Chittagong, Dhaka, Cat Lai, Haiphong, Ho Chi Minh City, Yangon, or across the European, African, and US sectors, we have the expertise, network, and equipment to ensure timely and secure delivery of your cargo.</p>
             </div>
         </div>
     </section>
 
-    <section class="image-showcase">
-        <div class="container">
-            <h2 class="section-title">Our Operations</h2>
-            <div class="showcase-grid">
-                <div class="showcase-item">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-308Z-804d47e3-chat-image-1767098879286-2.jpg" alt="MMI Logitek Container Loading at Port">
-                </div>
-                <div class="showcase-item">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-426Z-8a81e9bb-chat-image-1767098879407-3.jpg" alt="MMI Logitek Container Handling">
-                </div>
-                <div class="showcase-item">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-201Z-9cb540c4-chat-image-1767098879181-1.jpg" alt="MMI Logitek Container Domestication">
-                </div>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Years Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5000+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2000+</div>
+                <div class="stat-label">Containers Delivered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">9+</div>
+                <div class="stat-label">Country Presence</div>
             </div>
         </div>
     </section>
 
-    <section class="services">
-        <div class="container">
-            <h2 class="section-title">Our Comprehensive Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>NVOCC Services</h3>
-                    <p>As a proud NVOCC, we offer flexible, efficient ocean freight services akin to traditional steamship lines for today's global trade. With over 10 years of proven expertise in international shipping.</p>
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="section-header">
+            <h2>Your <span>Trusted Source</span> for Superior Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <h3>NVOCC</h3>
                 </div>
-                <div class="service-card">
+                <div class="service-content">
+                    <p>As a proud NVOCC, we offer flexible, efficient ocean freight services akin to traditional steamship lines for today's global trade.</p>
+                    <a href="#contact" class="service-link">Read More →</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
                     <h3>Container Trading & Leasing</h3>
-                    <p>We offer cost-effective container trading and leasing for global logistics, storage, and custom applications. Whether you're looking to lease for a short-term project or invest in containers for the long haul, we have you covered.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-content">
+                    <p>We offer cost-effective container trading and leasing for global logistics, storage, and custom applications, with diverse sizes for all needs.</p>
+                    <a href="#contact" class="service-link">Read More →</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
                     <h3>Container Domestication</h3>
-                    <p>We are a trusted name in container domestication, with a proven track record and expertise. Container domestication converts international shipping containers for local use, legally nationalizing them for a country's internal logistics network.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-content">
+                    <p>Container domestication converts international shipping containers for local use, legally nationalizing them for a country's internal logistics network.</p>
+                    <a href="#contact" class="service-link">Read More →</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
                     <h3>Freight Forwarding</h3>
-                    <p>As trusted freight forwarders, we streamline transportation for importers, exporters, and businesses from origin to destination with comprehensive logistics solutions tailored to your needs.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-content">
+                    <p>As trusted freight forwarders, we streamline transportation for importers, exporters, and businesses from origin to destination.</p>
+                    <a href="#contact" class="service-link">Read More →</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
                     <h3>Transportation</h3>
-                    <p>Transportation is the backbone of logistics. We provide efficient, secure, cost-effective solutions tailored to your global shipping needs with reliable delivery schedules.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Customs Clearance Services</h3>
-                    <p>Customs clearance is vital for international trade. We ensure smooth, accurate, and compliant import/export customs services to keep your cargo moving without delays.</p>
+                <div class="service-content">
+                    <p>Transportation is the backbone of logistics. We provide efficient, secure, cost-effective solutions tailored to your global shipping needs.</p>
+                    <a href="#contact" class="service-link">Read More →</a>
                 </div>
-                <div class="service-card">
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <h3>Customs Clearance</h3>
+                </div>
+                <div class="service-content">
+                    <p>Customs clearance is vital for international trade. We ensure smooth, accurate, and compliant import/export customs services.</p>
+                    <a href="#contact" class="service-link">Read More →</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
                     <h3>Vessel Operating Agent</h3>
-                    <p>We specialize in tailored vessel operating agency services, leveraging local partner networks and port expertise for seamless global operations and efficient port handling.</p>
+                </div>
+                <div class="service-content">
+                    <p>We specialize in tailored vessel operating agency services, leveraging local partner networks and port expertise for seamless global operations.</p>
+                    <a href="#contact" class="service-link">Read More →</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="section-header">
+            <h2>Our <span>Operations</span></h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-308Z-804d47e3-chat-image-1767098879286-2.jpg" alt="Container Loading">
+                <div class="gallery-overlay">
+                    <h3>Port Operations</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-426Z-8a81e9bb-chat-image-1767098879407-3.jpg" alt="Container Handling">
+                <div class="gallery-overlay">
+                    <h3>Container Handling</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-201Z-9cb540c4-chat-image-1767098879181-1.jpg" alt="Container Domestication">
+                <div class="gallery-overlay">
+                    <h3>Container Domestication</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
     <section class="why-choose">
-        <div class="container">
-            <h2 class="section-title">Why Choose MMI Logitek Fzco</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <h3>🌍 Global Reach</h3>
-                    <p>Comprehensive shipping services to and from all major ports worldwide with established networks.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>📦 Reliable Container Availability</h3>
-                    <p>Even during shortages, we ensure container availability through our extensive network and partnerships.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>🎯 Tailored Solutions</h3>
-                    <p>We offer customized shipping and logistics plans based on your specific business needs and requirements.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>💰 Competitive Freight Rates</h3>
-                    <p>Get the best value for your shipping requirements with transparent pricing and no hidden costs.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>🤝 Customer-Centric Approach</h3>
-                    <p>Prompt communication and professional service at every step of your shipping journey.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>⚡ One-Stop Solution</h3>
-                    <p>Like a departmental store for shipping - we handle all your logistics requirements under one roof.</p>
-                </div>
+        <div class="section-header">
+            <h2 style="color: white;">Why You Choose <span>MMI Logitek</span></h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Global Reach</h3>
+                <p>Comprehensive shipping services to and from all major ports worldwide.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3>Reliable Container Availability</h3>
+                <p>Even during shortages, we ensure container availability.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Tailored Solutions</h3>
+                <p>We offer customized shipping and logistics plans based on your needs.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Competitive Freight Rates</h3>
+                <p>Get the best value for your shipping requirements.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Customer-Centric Approach</h3>
+                <p>Prompt communication and professional service at every step.</p>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <div class="container">
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
             <h2>Streamline Your Global Shipping Today!</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Ready to optimize your logistics? Contact us for a customized shipping solution tailored to your business needs.</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>📧 Email</h3>
-                    <p><a href="mailto:Darshan@millenium.co.in">Darshan@millenium.co.in</a></p>
+            <p style="font-size: 1.2rem; color: #666;">Ready to optimize your logistics? Contact us for a customized shipping solution.</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <a href="mailto:Darshan@millenium.co.in">Darshan@millenium.co.in</a>
                 </div>
-                <div class="contact-item">
-                    <h3>📱 Phone</h3>
-                    <p><a href="tel:+971585881060">+971 58 588 1060</a></p>
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>Call Us</h3>
+                    <a href="tel:+971585881060">+971 58 588 1060</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 MMI Logitek Fzco - Dubai, UAE. All rights reserved.</p>
-            <p style="margin-top: 0.5rem; opacity: 0.8;">Trusted Global Shipping & Logistics Solutions | 10+ Years of Excellence</p>
-        </div>
+        <p>&copy; 2026 MMI Logitek Fzco. All rights reserved.</p>
+        <p>Trusted Global Shipping & Logistics Solutions | 10+ Years of Excellence</p>
     </footer>
 </body>
 </html>
