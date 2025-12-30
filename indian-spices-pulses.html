@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Spices & Pulses Trading | MMI Logitek</title>
+    <meta name="description" content="Premium Indian spices and pulses export. Quality products sourced from India, delivered worldwide.">
+    <link rel="icon" type="image/png" href="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .logo-text h2 {
+            font-size: 1.5rem;
+            color: #1e3c72;
+            font-weight: 700;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-menu li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu li a:hover::after,
+        .nav-menu li a.active::after {
+            width: 100%;
+        }
+        
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            color: #ff6b35;
+        }
+        
+        .hero {
+            margin-top: 90px;
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        .content-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+        
+        .content-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .intro-text {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+        
+        .intro-text h2 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .intro-text h2 span {
+            color: #ff6b35;
+        }
+        
+        .intro-text p {
+            color: #666;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+        
+        .category-section {
+            margin: 4rem 0;
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .category-header h2 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .category-header h2 span {
+            color: #ff6b35;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e3c72;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight-box p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .feature-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cta-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            margin: 0 1rem 1rem 0;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
+        }
+        
+        .whatsapp-button {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+        
+        .footer {
+            background: #0a1929;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .intro-text h2,
+            .category-header h2 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg" alt="MMI Logitek" class="logo-img">
+                <div class="logo-text">
+                    <h2>MMI Logitek</h2>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services" class="active">Services</a></li>
+                <li><a href="index.html#agency">Agency Network</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Indian Spices & Pulses Trading</h1>
+            <p class="hero-subtitle">Premium Quality Products from India to the World</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="content-container">
+            <div class="intro-text">
+                <h2><span>Authentic</span> Indian Products</h2>
+                <p>Through our trusted partner network in India, we export premium quality Indian spices and pulses to customers worldwide. Our products are sourced directly from reliable suppliers, ensuring authenticity, freshness, and the highest quality standards. Whether you need bulk quantities for commercial use or specialized products for retail, we deliver excellence across the globe.</p>
+            </div>
+
+            <!-- Indian Spices Section -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2><span>Indian</span> Spices</h2>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Cardamom Powder" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Cardamom Powder</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Coriander Seeds" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Coriander Seeds</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Cardamom 8mm" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Cardamom - 8mm</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Coriander/Dhanya Powder" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Coriander/Dhanya Powder</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Cumin Seeds" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Cumin Seeds</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Cumin/Jeera Powder" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Cumin/Jeera Powder</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Cardamom 6mm" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Cardamom - 6mm</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Mustard Seeds" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Mustard Seeds</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Mustard Powder" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Mustard Powder</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Asafoetida/Heeng" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Asafoetida/Heeng</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Fenugreek" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Fenugreek</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Bay Leaves" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Bay Leaves</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Fenugreek Powder" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Fenugreek Powder</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Nutmeg" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Nutmeg</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Garam Masala" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Garam Masala</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Asafoetida/Heeng Powder" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Asafoetida/Heeng Powder</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Cinnamon Powder" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Cinnamon Powder</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Cinnamon Sticks" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Cinnamon Sticks</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400" alt="Turmeric/Haldi Powder" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Turmeric/Haldi Powder</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Cloves" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Cloves</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Cinnamon Leafs" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Cinnamon Leafs</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Fennel Powder" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Fennel Powder</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Nutmeg Powder" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Nutmeg Powder</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Fennel Seeds" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Fennel Seeds</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Saffron" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Saffron</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Clove Powder" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Clove Powder</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indian Pulses Section -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2><span>Indian</span> Pulses</h2>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Split Pigeon Peas/Toor Dal" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Split Pigeon Peas/Toor Dal</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Split Black Gram / Urad Dal" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Split Black Gram / Urad Dal</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Mung Beans" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Mung Beans</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Red Lentils/Masoor Dal" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Red Lentils/Masoor Dal</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Red Split Lentils" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Red Split Lentils</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Moth Bean" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Moth Bean</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Horse Gram / Kulthi Dal" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Horse Gram / Kulthi Dal</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Chickpeas" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Chickpeas</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Kidney Beans" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Kidney Beans</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Black Lentils/Masoor Dal" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Black Lentils/Masoor Dal</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Black Chickpeas" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Black Chickpeas</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Brown Lentils/Masoor Dal" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Brown Lentils/Masoor Dal</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Black-Eyed Peas" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Black-Eyed Peas</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599909533730-f9d7e2c1c9db?w=400" alt="Adzuki Beans" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Adzuki Beans</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=400" alt="Black Beans" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Black Beans</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Section -->
+            <div class="highlight-box">
+                <h3>Why Choose Our Products?</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h4>✓ Premium Quality</h4>
+                        <p>Sourced from trusted suppliers in India</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>✓ Global Delivery</h4>
+                        <p>We ship to any location worldwide</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>✓ Bulk Orders</h4>
+                        <p>Competitive pricing for large quantities</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>✓ Quality Assurance</h4>
+                        <p>All products meet international standards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Interested in Our Products?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Contact us for pricing, availability, and bulk order inquiries</p>
+        <a href="index.html#contact" class="cta-button">Contact Us</a>
+        <a href="https://wa.me/971585881060" target="_blank" class="cta-button whatsapp-button">WhatsApp Us</a>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 MMI Logitek Fzco. All rights reserved.</p>
+    </footer>
+</body>
+</html>
