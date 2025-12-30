@@ -25,20 +25,31 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
         }
         
-        .header h1 {
+        .logo {
+            height: 80px;
+            width: auto;
+        }
+        
+        .header-text h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
         
-        .header p {
+        .header-text p {
             font-size: 1.2rem;
             opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .hero {
@@ -244,29 +255,30 @@
         
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
-            max-width: 900px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
         
         .contact-item {
             background: rgba(255,255,255,0.1);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 8px;
         }
         
         .contact-item h3 {
             margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
         
         .contact-item a {
             color: white;
             text-decoration: none;
             transition: opacity 0.3s;
+            font-size: 1.1rem;
         }
         
         .contact-item a:hover {
@@ -281,7 +293,16 @@
         }
         
         @media (max-width: 768px) {
-            .header h1 {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                height: 60px;
+            }
+            
+            .header-text h1 {
                 font-size: 2rem;
             }
             
@@ -306,8 +327,13 @@
 <body>
     <header class="header">
         <div class="container">
-            <h1>MMI Logitek Fzco</h1>
-            <p>Your Trusted Partner in Global Shipping & Logistics</p>
+            <div class="header-content">
+                <!-- Logo will be added here once provided -->
+                <div class="header-text">
+                    <h1>MMI Logitek Fzco</h1>
+                    <p>Your Trusted Partner in Global Shipping & Logistics</p>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -316,7 +342,7 @@
         <div class="hero-overlay">
             <div class="hero-content">
                 <h2>Trusted Global Shipping & Logistics Solutions</h2>
-                <p>MMI Logitek Fzco is a trusted name in the global shipping and logistics industry with over 10 years of excellence. Based in Dubai, we specialize in seamless, reliable, and cost-effective cargo transport solutions across major international trade routes.</p>
+                <p>MMI Logitek Fzco is a trusted name in the global shipping and logistics industry with over 10 years of excellence. We specialize in seamless, reliable, and cost-effective cargo transport solutions across major international trade routes.</p>
                 <a href="#contact" class="cta-button">Get a Quote</a>
             </div>
         </div>
@@ -435,10 +461,6 @@
             <h2>Streamline Your Global Shipping Today!</h2>
             <p style="font-size: 1.2rem; margin-bottom: 2rem;">Ready to optimize your logistics? Contact us for a customized shipping solution tailored to your business needs.</p>
             <div class="contact-info">
-                <div class="contact-item">
-                    <h3>📍 Location</h3>
-                    <p>Dubai, UAE</p>
-                </div>
                 <div class="contact-item">
                     <h3>📧 Email</h3>
                     <p><a href="mailto:Darshan@millenium.co.in">Darshan@millenium.co.in</a></p>
