@@ -539,19 +539,33 @@
         }
         
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feature-icon svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
         }
         
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             font-weight: 600;
+            text-align: center;
         }
         
         .feature-card p {
             opacity: 0.9;
             line-height: 1.8;
+            text-align: center;
         }
         
         /* Contact Section */
@@ -568,7 +582,7 @@
         
         .contact-container h2 {
             font-size: 3rem;
-            color: #1e3c72;
+            color: #ff6b35;
             margin-bottom: 2rem;
             font-weight: 700;
         }
@@ -748,7 +762,7 @@
         <div class="about-container">
             <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-308Z-804d47e3-chat-image-1767098879286-2.jpg" alt="MMI Logitek Operations" class="about-image">
             <div class="about-content">
-                <h2><span>Trusted</span> Global Shipping & Logistics Solutions</h2>
+                <h2><span>About</span> Us</h2>
                 <p>MMI Logitek Fzco is a trusted name in the global shipping and logistics industry with over 10 years of excellence. As a leading NVOCC and Freight Forwarding company, we specialize in providing seamless, reliable, and cost-effective cargo transport solutions across major international trade routes.</p>
                 <p>Whether you're shipping to or from Jebel Ali, Dammam, Port Klang, Chittagong, Dhaka, Cat Lai, Haiphong, Ho Chi Minh City, Yangon, or across the European, African, and US sectors, we have the expertise, network, and equipment to ensure timely and secure delivery of your cargo.</p>
             </div>
@@ -784,7 +798,7 @@
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-308Z-804d47e3-chat-image-1767098879286-2.jpg" alt="NVOCC Services" class="service-image">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-469Z-b3fb2d85-chat-image-1767102600449-0.jpg" alt="NVOCC Services" class="service-image">
                 <div class="service-icon">
                     <h3>NVOCC</h3>
                 </div>
@@ -811,7 +825,7 @@
                 </div>
             </div>
             <div class="service-card">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-042Z-0a836d50-chat-image-1767098879023-0.jpg" alt="Freight Forwarding" class="service-image">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-878Z-9593580f-chat-image-1767102600860-3.jpg" alt="Freight Forwarding" class="service-image">
                 <div class="service-icon">
                     <h3>Freight Forwarding</h3>
                 </div>
@@ -829,7 +843,7 @@
                 </div>
             </div>
             <div class="service-card">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-426Z-8a81e9bb-chat-image-1767098879407-3.jpg" alt="Customs Clearance" class="service-image">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-727Z-17d45f5d-chat-image-1767102600706-2.jpg" alt="Customs Clearance" class="service-image">
                 <div class="service-icon">
                     <h3>Customs Clearance</h3>
                 </div>
@@ -838,7 +852,7 @@
                 </div>
             </div>
             <div class="service-card">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-201Z-9cb540c4-chat-image-1767098879181-1.jpg" alt="Vessel Operating Agent" class="service-image">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-585Z-ac165ac7-chat-image-1767102600566-1.jpg" alt="Vessel Operating Agent" class="service-image">
                 <div class="service-icon">
                     <h3>Vessel Operating Agent</h3>
                 </div>
@@ -878,31 +892,41 @@
     <!-- Why Choose Section -->
     <section class="why-choose">
         <div class="section-header">
-            <h2 style="color: white;">Why You Choose <span>MMI Logitek</span></h2>
+            <h2 style="color: white;">Why <span>Choose Us?</span></h2>
         </div>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">🌍</div>
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                </div>
                 <h3>Global Reach</h3>
                 <p>Comprehensive shipping services to and from all major ports worldwide.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">📦</div>
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                </div>
                 <h3>Reliable Container Availability</h3>
                 <p>Even during shortages, we ensure container availability.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🎯</div>
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11z"/><circle cx="17.5" cy="17.5" r="4.5"/><path d="M3 13.5h8v8H3z"/></svg>
+                </div>
                 <h3>Tailored Solutions</h3>
                 <p>We offer customized shipping and logistics plans based on your needs.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">💰</div>
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                </div>
                 <h3>Competitive Freight Rates</h3>
                 <p>Get the best value for your shipping requirements.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🤝</div>
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                </div>
                 <h3>Customer-Centric Approach</h3>
                 <p>Prompt communication and professional service at every step.</p>
             </div>
