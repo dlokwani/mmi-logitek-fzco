@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vessel Operating Agent | MMI Logitek</title>
+    <meta name="description" content="End-to-end vessel operating agency services with 24/7 operational support and expert port coordination.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .logo-text h2 {
+            font-size: 1.5rem;
+            color: #1e3c72;
+            font-weight: 700;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-menu li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu li a:hover::after,
+        .nav-menu li a.active::after {
+            width: 100%;
+        }
+        
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            color: #ff6b35;
+        }
+        
+        .hero {
+            margin-top: 90px;
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.75) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            color: white;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .content-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+        
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .content-container h2 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .content-container h2 span {
+            color: #ff6b35;
+        }
+        
+        .content-container p {
+            color: #666;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .content-container ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .content-container ul li {
+            color: #666;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .content-container ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .service-box {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .service-box h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-box p {
+            margin-bottom: 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            color: white;
+        }
+        
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .highlight-box ul li {
+            color: white;
+        }
+        
+        .highlight-box ul li::before {
+            color: #ff6b35;
+        }
+        
+        .cta-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
+        }
+        
+        .footer {
+            background: #0a1929;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .content-container h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg" alt="MMI Logitek" class="logo-img">
+                <div class="logo-text">
+                    <h2>MMI Logitek</h2>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services" class="active">Services</a></li>
+                <li><a href="index.html#agency">Agency Network</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-585Z-ac165ac7-chat-image-1767102600566-1.jpg" alt="Vessel Operating Agent" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Vessel Operating Agent</h1>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="content-container">
+            <p>We specialize in providing end-to-end vessel operating agency services tailored to meet the demanding needs of shipowners, charterers, and operators worldwide. With a strong network of local partners and deep knowledge of port operations, we ensure seamless coordination and efficient turnaround at every port of call.</p>
+
+            <h2>Our Core <span>Services</span></h2>
+
+            <div class="service-box">
+                <h3>Port Agency Services</h3>
+                <p>We represent your vessel during its entire port call—coordinating with port authorities, customs, immigration, and terminals to ensure smooth and efficient port operations.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Vessel Clearance & Documentation</h3>
+                <p>From inward/outward clearance to preparing and submitting accurate documentation, we handle all formalities to ensure compliance with local and international regulations.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Crew Change Assistance</h3>
+                <p>We facilitate safe and timely crew changes, including immigration processing, transportation, and hotel arrangements, with strict adherence to port health and safety protocols.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Bunker Coordination</h3>
+                <p>We arrange bunkering operations with approved suppliers and ensure strict quality control, documentation, and compliance with IMO and MARPOL standards.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>24/7 Operational Support</h3>
+                <p>We are available around the clock to respond to vessel needs, emergencies, and last-minute requests, ensuring peace of mind for our clients.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Why Choose Us?</h3>
+                <ul>
+                    <li><strong>Reliable Network</strong> - Established relationships with port authorities, terminals, and service providers.</li>
+                    <li><strong>Cost Efficiency</strong> - Transparent, optimized operations that reduce port stay and avoid unnecessary costs.</li>
+                    <li><strong>Compliance & Safety Focused</strong> - Full adherence to international maritime laws and safety regulations.</li>
+                    <li><strong>Customized Solutions</strong> - Tailored services to fit the unique requirements of each vessel and voyage.</li>
+                </ul>
+            </div>
+
+            <p>More than vessel operations — we're your maritime partners. At MMI Logitek Fzco, we provide reliable, expert, and tailored vessel management solutions to propel your business forward.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Get in Touch</h2>
+        <a href="index.html#contact" class="cta-button">Contact Us</a>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 MMI Logitek Fzco. All rights reserved.</p>
+    </footer>
+</body>
+</html>
