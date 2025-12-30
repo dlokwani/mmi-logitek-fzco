@@ -15,6 +15,10 @@
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
@@ -59,20 +63,51 @@
             font-weight: 700;
         }
         
-        .nav-cta {
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
         }
         
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4);
+        .nav-menu li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu li a:hover::after,
+        .nav-menu li a.active::after {
+            width: 100%;
+        }
+        
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            color: #ff6b35;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #1e3c72;
         }
         
         /* Hero Section */
@@ -420,10 +455,71 @@
             gap: 1rem;
         }
         
+        /* Agency Network Section */
+        .agency-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+        
+        .agency-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .agency-content h2 {
+            font-size: 3rem;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .agency-content h2 span {
+            color: #ff6b35;
+        }
+        
+        .agency-content p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.9;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+        
+        .network-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .network-card {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            color: white;
+            transition: all 0.4s ease;
+        }
+        
+        .network-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(30, 60, 114, 0.3);
+        }
+        
+        .network-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .network-card p {
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
         /* Gallery Section */
         .gallery-section {
             padding: 6rem 2rem;
-            background: white;
+            background: #f8f9fa;
         }
         
         .gallery-grid {
@@ -594,6 +690,30 @@
         }
         
         /* Responsive */
+        @media (max-width: 968px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 90px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 2rem 0;
+                gap: 1.5rem;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
@@ -609,7 +729,8 @@
             
             .section-header h2,
             .about-content h2,
-            .contact-container h2 {
+            .contact-container h2,
+            .agency-content h2 {
                 font-size: 2rem;
             }
             
@@ -630,12 +751,19 @@
                     <h2>MMI Logitek Fzco</h2>
                 </div>
             </div>
-            <a href="#contact" class="nav-cta">Get Quote</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#agency">Agency Network</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-042Z-0a836d50-chat-image-1767098879023-0.jpg" alt="MMI Logitek Fzco" class="hero-bg">
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -667,7 +795,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="about-section">
+    <section class="about-section" id="about">
         <div class="about-container">
             <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-308Z-804d47e3-chat-image-1767098879286-2.jpg" alt="MMI Logitek Operations" class="about-image">
             <div class="about-content">
@@ -772,6 +900,32 @@
         </div>
     </section>
 
+    <!-- Agency Network Section -->
+    <section class="agency-section" id="agency">
+        <div class="agency-content">
+            <h2>Our <span>Global</span> Agency Network</h2>
+            <p>With strategic partnerships and agency networks across 9+ countries, we provide comprehensive shipping and logistics solutions worldwide. Our extensive network ensures seamless operations and reliable service delivery across all major trade routes.</p>
+            <div class="network-grid">
+                <div class="network-card">
+                    <h3>Middle East</h3>
+                    <p>Jebel Ali, Dammam, and major UAE ports</p>
+                </div>
+                <div class="network-card">
+                    <h3>Southeast Asia</h3>
+                    <p>Port Klang, Cat Lai, Haiphong, Ho Chi Minh City, Yangon</p>
+                </div>
+                <div class="network-card">
+                    <h3>South Asia</h3>
+                    <p>Chittagong, Dhaka, and major Indian ports</p>
+                </div>
+                <div class="network-card">
+                    <h3>Global Coverage</h3>
+                    <p>European, African, and US sectors</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Gallery Section -->
     <section class="gallery-section">
         <div class="section-header">
@@ -858,5 +1012,44 @@
         <p>&copy; 2026 MMI Logitek Fzco. All rights reserved.</p>
         <p>Trusted Global Shipping & Logistics Solutions | 10+ Years of Excellence</p>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
