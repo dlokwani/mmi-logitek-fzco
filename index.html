@@ -324,37 +324,87 @@
             line-height: 1.8;
         }
         
+        .agency-section {
+            position: relative;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            overflow: hidden;
+        }
+        
+        .agency-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920') center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .agency-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .agency-section .section-title {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .agency-section .section-title span {
+            color: #ff6b35;
+        }
+        
+        .agency-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
         .agency-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
         
         .agency-card {
-            background: white;
-            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             text-align: center;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
         
         .agency-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            background: white;
+        }
+        
+        .agency-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
         
         .agency-name {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: #1e3c72;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
         
         .agency-location {
             color: #666;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
         }
         
         .contact-section {
@@ -536,26 +586,28 @@
         </div>
     </section>
 
-    <section id="agency" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our <span>Agency Network</span></h2>
-                <p class="section-subtitle">Strategic partnerships across key global locations</p>
-            </div>
+    <section id="agency" class="agency-section">
+        <div class="agency-container">
+            <h2 class="section-title">Our <span>Agency Network</span></h2>
+            <p class="section-subtitle">Strategic partnerships across key global locations</p>
             <div class="agency-grid">
                 <div class="agency-card">
+                    <div class="agency-icon">🇦🇪</div>
                     <h3 class="agency-name">Dubai Office</h3>
                     <p class="agency-location">United Arab Emirates</p>
                 </div>
                 <div class="agency-card">
+                    <div class="agency-icon">🇮🇳</div>
                     <h3 class="agency-name">Mumbai Partner</h3>
                     <p class="agency-location">India</p>
                 </div>
                 <div class="agency-card">
+                    <div class="agency-icon">🇮🇳</div>
                     <h3 class="agency-name">Delhi Partner</h3>
                     <p class="agency-location">India</p>
                 </div>
                 <div class="agency-card">
+                    <div class="agency-icon">🇮🇳</div>
                     <h3 class="agency-name">Chennai Partner</h3>
                     <p class="agency-location">India</p>
                 </div>
