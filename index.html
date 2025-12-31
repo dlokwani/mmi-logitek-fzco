@@ -434,8 +434,9 @@
         .agency-container {
             position: relative;
             z-index: 2;
-            max-width: 1400px;
+            max-width: 1000px;
             margin: 0 auto;
+            text-align: center;
         }
         
         .agency-section .section-title {
@@ -452,57 +453,14 @@
             color: rgba(255, 255, 255, 0.9);
             text-align: center;
             margin-bottom: 2rem;
+            font-size: 1.3rem;
         }
         
         .agency-description {
-            max-width: 900px;
-            margin: 0 auto 4rem;
-            text-align: center;
             color: rgba(255, 255, 255, 0.95);
             font-size: 1.1rem;
             line-height: 1.9;
-            padding: 0 1rem;
-        }
-        
-        .agency-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-        
-        .agency-card {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             text-align: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-        
-        .agency-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            background: white;
-        }
-        
-        .agency-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .agency-name {
-            font-size: 1.5rem;
-            color: #1e3c72;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .agency-location {
-            color: #666;
-            font-size: 1.1rem;
-            font-weight: 500;
         }
         
         .contact-section {
@@ -580,8 +538,7 @@
                 font-size: 3rem;
             }
             
-            .services-grid,
-            .agency-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -749,28 +706,6 @@
             <p class="section-subtitle">Discover our extensive agency partnerships</p>
             <div class="agency-description">
                 <p>As a trusted partner in the logistics industry, our agency network of NVOCC services offers a comprehensive and reliable solution for your cargo needs. With an extensive network of partners and agents worldwide, we provide efficient and cost-effective transportation services, leveraging our expertise in Non-Vessel Operating Common Carrier (NVOCC) operations. Our network enables us to offer flexible routing options, competitive rates, and personalized service, ensuring that your cargo reaches its destination safely and on time.</p>
-            </div>
-            <div class="agency-grid">
-                <div class="agency-card">
-                    <div class="agency-icon">🇦🇪</div>
-                    <h3 class="agency-name">Dubai Office</h3>
-                    <p class="agency-location">United Arab Emirates</p>
-                </div>
-                <div class="agency-card">
-                    <div class="agency-icon">🇮🇳</div>
-                    <h3 class="agency-name">Mumbai Partner</h3>
-                    <p class="agency-location">India</p>
-                </div>
-                <div class="agency-card">
-                    <div class="agency-icon">🇮🇳</div>
-                    <h3 class="agency-name">Delhi Partner</h3>
-                    <p class="agency-location">India</p>
-                </div>
-                <div class="agency-card">
-                    <div class="agency-icon">🇮🇳</div>
-                    <h3 class="agency-name">Chennai Partner</h3>
-                    <p class="agency-location">India</p>
-                </div>
             </div>
         </div>
     </section>
