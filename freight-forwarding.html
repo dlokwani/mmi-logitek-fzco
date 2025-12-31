@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freight Forwarding | MMI Logitek</title>
-    <meta name="description" content="Trusted freight forwarding services with over 5 years of experience in global cargo transportation.">
+    <meta name="description" content="Comprehensive freight forwarding services by air, sea, and land with MMI Logitek Fzco.">
+    <link rel="icon" type="image/png" href="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -50,6 +51,18 @@
             gap: 1rem;
         }
         
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo-link:hover {
+            opacity: 0.8;
+        }
+        
         .logo-img {
             height: 60px;
             width: auto;
@@ -89,13 +102,11 @@
             transition: width 0.3s ease;
         }
         
-        .nav-menu li a:hover::after,
-        .nav-menu li a.active::after {
+        .nav-menu li a:hover::after {
             width: 100%;
         }
         
-        .nav-menu li a:hover,
-        .nav-menu li a.active {
+        .nav-menu li a:hover {
             color: #ff6b35;
         }
         
@@ -108,38 +119,42 @@
             overflow: hidden;
         }
         
-        .hero-bg {
+        .hero-image {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            z-index: 1;
         }
         
-        .hero-overlay {
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.75) 100%);
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.85) 100%);
+            z-index: 2;
         }
         
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
             color: white;
+            text-align: center;
+            width: 100%;
         }
         
         .hero-title {
             font-size: 4rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            line-height: 1.2;
         }
         
         .content-section {
@@ -152,71 +167,61 @@
             margin: 0 auto;
         }
         
-        .content-container h2 {
+        .content-container h1 {
             font-size: 2.5rem;
             color: #1e3c72;
             margin-bottom: 2rem;
             font-weight: 700;
         }
         
-        .content-container h2 span {
-            color: #ff6b35;
+        .content-container h2 {
+            font-size: 2rem;
+            color: #1e3c72;
+            margin: 3rem 0 1.5rem;
+            font-weight: 600;
+        }
+        
+        .content-container h3 {
+            font-size: 1.5rem;
+            color: #2a5298;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
         }
         
         .content-container p {
             color: #666;
             line-height: 1.9;
-            margin-bottom: 1.5rem;
             font-size: 1.1rem;
+            margin-bottom: 1.5rem;
         }
         
         .content-container ul {
-            list-style: none;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
+            padding-left: 2rem;
         }
         
-        .content-container ul li {
+        .content-container li {
             color: #666;
             line-height: 1.9;
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
             font-size: 1.1rem;
+            margin-bottom: 0.8rem;
         }
         
-        .content-container ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #ff6b35;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-        
-        .highlight-box {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid #ff6b35;
-            margin: 2rem 0;
-        }
-        
-        .highlight-box h3 {
+        .content-container strong {
             color: #1e3c72;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-weight: 600;
         }
         
         .cta-section {
             padding: 4rem 2rem;
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             text-align: center;
-            color: white;
         }
         
         .cta-section h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
+            color: white;
         }
         
         .cta-button {
@@ -230,6 +235,7 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            margin: 0.5rem;
         }
         
         .cta-button:hover {
@@ -254,8 +260,12 @@
                 font-size: 2.5rem;
             }
             
-            .content-container h2 {
+            .content-container h1 {
                 font-size: 2rem;
+            }
+            
+            .content-container h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -264,15 +274,17 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo-section">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg" alt="MMI Logitek" class="logo-img">
-                <div class="logo-text">
-                    <h2>MMI Logitek</h2>
-                </div>
+                <a href="index.html" class="logo-link">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg" alt="MMI Logitek" class="logo-img">
+                    <div class="logo-text">
+                        <h2>MMI Logitek</h2>
+                    </div>
+                </a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#services" class="active">Services</a></li>
+                <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#agency">Agency Network</a></li>
                 <li><a href="index.html#contact">Contact Us</a></li>
             </ul>
@@ -280,8 +292,7 @@
     </nav>
 
     <section class="hero">
-        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-878Z-9593580f-chat-image-1767102600860-3.jpg" alt="Freight Forwarding" class="hero-bg">
-        <div class="hero-overlay"></div>
+        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-727Z-17d45f5d-chat-image-1767102600706-2.jpg" alt="Freight Forwarding" class="hero-image">
         <div class="hero-content">
             <h1 class="hero-title">Freight Forwarding</h1>
         </div>
@@ -289,11 +300,11 @@
 
     <section class="content-section">
         <div class="content-container">
-            <p>Freight forwarding involves the strategic coordination and shipment of goods from one destination to another using multiple modes of transportation — including air, sea, rail, and road. It is a critical function in global trade, ensuring goods move safely, efficiently, and cost-effectively across borders.</p>
+            <p>Freight forwarding involves the strategic coordination and shipment of goods from one destination to another using multiple modes of transportation —including air, sea, rail, and road. It is a critical function in global trade, ensuring goods move safely, efficiently, and cost-effectively across borders.</p>
             
             <p>At MMI Logitek Fzco, we act as trusted freight forwarding agents, working on behalf of importers, exporters, and commercial businesses to streamline the transportation process from origin to destination.</p>
 
-            <h2>Our Freight Forwarding <span>Expertise</span></h2>
+            <h2>Our Freight Forwarding Expertise</h2>
             <p>With over 5 years of dedicated experience in freight forwarding, MMI Logitek Fzco has successfully handled a wide range of cargo across multiple sectors and geographies. Our team ensures:</p>
             <ul>
                 <li>Proper planning and documentation</li>
@@ -302,18 +313,16 @@
                 <li>Full transparency and cargo tracking throughout the journey</li>
             </ul>
 
-            <div class="highlight-box">
-                <h3>What We Offer</h3>
-                <ul>
-                    <li><strong>Multimodal Transportation</strong> via air, sea, rail, and road</li>
-                    <li><strong>Competitive Freight Rates</strong> - We guarantee market-leading rates across all major sectors</li>
-                    <li><strong>Customized Logistics Solutions</strong> based on your shipment size, type, and destination</li>
-                    <li><strong>Global Coverage</strong> - Strong presence across USA, UAE, China, Southeast Asia, and more</li>
-                    <li><strong>End-to-End Support</strong> from booking and clearance to delivery and documentation</li>
-                </ul>
-            </div>
+            <h3>What We Offer</h3>
+            <ul>
+                <li><strong>Multimodal Transportation</strong> via air, sea, rail, and road</li>
+                <li><strong>Competitive Freight Rates</strong> - We guarantee market-leading rates across all major sectors</li>
+                <li><strong>Customized Logistics Solutions</strong> based on your shipment size, type, and destination</li>
+                <li><strong>Global Coverage</strong> - Strong presence across USA, UAE, China, Southeast Asia, and more</li>
+                <li><strong>End-to-End Support</strong> from booking and clearance to delivery and documentation</li>
+            </ul>
 
-            <h2>Why Choose <span>Our Services?</span></h2>
+            <h2>Why Choose Our Services?</h2>
             <ul>
                 <li>Experienced Freight Forwarders with a global network</li>
                 <li>Personalized attention to your logistics needs</li>
@@ -322,7 +331,7 @@
                 <li>Commitment to timely and safe deliveries</li>
             </ul>
 
-            <p>At MMI Logitek Fzco, we don't just move cargo — we move your business forward. No matter the size, type, or destination of your shipment, we are here to deliver excellence, reliability, and value.</p>
+            <p>At MMI Logitek Fzco, we don't just move cargo —we move your business forward. No matter the size, type, or destination of your shipment, we are here to deliver excellence, reliability, and value.</p>
         </div>
     </section>
 
