@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indian Spices & Pulses Trading | MMI Logitek</title>
-    <meta name="description" content="Premium Indian spices and pulses export. Quality products sourced from India, delivered worldwide.">
+    <title>Indian Spices & Pulses | MMI Logitek</title>
+    <meta name="description" content="Premium quality Indian spices and pulses exported worldwide with MMI Logitek Fzco.">
     <link rel="icon" type="image/png" href="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,13 +102,11 @@
             transition: width 0.3s ease;
         }
         
-        .nav-menu li a:hover::after,
-        .nav-menu li a.active::after {
+        .nav-menu li a:hover::after {
             width: 100%;
         }
         
-        .nav-menu li a:hover,
-        .nav-menu li a.active {
+        .nav-menu li a:hover {
             color: #ff6b35;
         }
         
@@ -119,12 +117,32 @@
             display: flex;
             align-items: center;
             overflow: hidden;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.85) 100%);
+            z-index: 2;
         }
         
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
@@ -137,13 +155,6 @@
             font-size: 4rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            opacity: 0.9;
         }
         
         .content-section {
@@ -152,142 +163,65 @@
         }
         
         .content-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         
-        .intro-text {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto 4rem;
-        }
-        
-        .intro-text h2 {
+        .content-container h1 {
             font-size: 2.5rem;
             color: #1e3c72;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             font-weight: 700;
         }
         
-        .intro-text h2 span {
-            color: #ff6b35;
+        .content-container h2 {
+            font-size: 2rem;
+            color: #1e3c72;
+            margin: 3rem 0 1.5rem;
+            font-weight: 600;
         }
         
-        .intro-text p {
+        .content-container h3 {
+            font-size: 1.5rem;
+            color: #2a5298;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+        
+        .content-container p {
             color: #666;
             line-height: 1.9;
             font-size: 1.1rem;
-        }
-        
-        .category-section {
-            margin: 4rem 0;
-        }
-        
-        .category-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .category-header h2 {
-            font-size: 2.5rem;
-            color: #1e3c72;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-        
-        .category-header h2 span {
-            color: #ff6b35;
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .product-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .product-info {
-            padding: 1.5rem;
-            text-align: center;
-        }
-        
-        .product-name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1e3c72;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            padding: 3rem;
-            border-radius: 20px;
-            margin: 4rem 0;
-            color: white;
-            text-align: center;
-        }
-        
-        .highlight-box h3 {
-            font-size: 2rem;
             margin-bottom: 1.5rem;
         }
         
-        .highlight-box p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            opacity: 0.95;
-            max-width: 800px;
-            margin: 0 auto;
+        .content-container ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
         }
         
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .content-container li {
+            color: #666;
+            line-height: 1.9;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
         }
         
-        .feature-item {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-        }
-        
-        .feature-item h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+        .content-container strong {
+            color: #1e3c72;
+            font-weight: 600;
         }
         
         .cta-section {
             padding: 4rem 2rem;
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             text-align: center;
-            color: white;
         }
         
         .cta-section h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
+            color: white;
         }
         
         .cta-button {
@@ -301,16 +235,12 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
-            margin: 0 1rem 1rem 0;
+            margin: 0.5rem;
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
-        }
-        
-        .whatsapp-button {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
         }
         
         .footer {
@@ -330,17 +260,12 @@
                 font-size: 2.5rem;
             }
             
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .intro-text h2,
-            .category-header h2 {
+            .content-container h1 {
                 font-size: 2rem;
             }
             
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            .content-container h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -359,7 +284,7 @@
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#services" class="active">Services</a></li>
+                <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#agency">Agency Network</a></li>
                 <li><a href="index.html#contact">Contact Us</a></li>
             </ul>
@@ -367,313 +292,64 @@
     </nav>
 
     <section class="hero">
+        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T09-00-38-611Z-7454e6e4-chat-image-1767171638593-0.jpg" alt="Indian Spices & Pulses" class="hero-image">
         <div class="hero-content">
-            <h1 class="hero-title">Indian Spices & Pulses Trading</h1>
-            <p class="hero-subtitle">Premium Quality Products from India to the World</p>
+            <h1 class="hero-title">Indian Spices & Pulses</h1>
         </div>
     </section>
 
     <section class="content-section">
         <div class="content-container">
-            <div class="intro-text">
-                <h2><span>Authentic</span> Indian Products</h2>
-                <p>Through our trusted partner network in India, we export premium quality Indian spices and pulses to customers worldwide. Our products are sourced directly from reliable suppliers, ensuring authenticity, freshness, and the highest quality standards. Whether you need bulk quantities for commercial use or specialized products for retail, we deliver excellence across the globe.</p>
-            </div>
+            <h2>Authentic Indian Flavors</h2>
+            <p>At MMI Logitek Fzco, we take pride in sourcing and exporting the finest quality Indian spices and pulses to customers around the world. Our products are carefully selected from trusted suppliers across India, ensuring authenticity, freshness, and superior taste in every shipment.</p>
 
-            <!-- Indian Spices Section -->
-            <div class="category-section">
-                <div class="category-header">
-                    <h2><span>Indian</span> Spices</h2>
-                </div>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-45-55-928Z-1ca95e69-chat-image-1767170755909-1.jpg" alt="Asafoetida/Heeng" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Asafoetida/Heeng</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-45-55-777Z-829ae6b1-chat-image-1767170755759-0.jpg" alt="Asafoetida/Heeng Powder" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Asafoetida/Heeng Powder</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-45-56-085Z-2c20b92a-chat-image-1767170756067-2.jpg" alt="Bay Leaves" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Bay Leaves</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-45-56-258Z-3341e0fc-chat-image-1767170756239-3.jpg" alt="Cardamom - 6mm" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Cardamom - 6mm</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-47-32-531Z-efbbb4e7-chat-image-1767170852513-1.jpg" alt="Cardamom - 8mm" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Cardamom - 8mm</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-47-32-387Z-a6340613-chat-image-1767170852369-0.jpg" alt="Cardamom Powder" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Cardamom Powder</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-47-32-662Z-6dff6518-chat-image-1767170852643-2.jpg" alt="Cinnamon Leafs" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Cinnamon Leafs</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-47-32-755Z-019ce26c-chat-image-1767170852736-3.jpg" alt="Cinnamon Powder" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Cinnamon Powder</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-49-15-490Z-432f2b83-chat-image-1767170955471-0.jpg" alt="Cinnamon Sticks" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Cinnamon Sticks</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-49-15-661Z-49c937be-chat-image-1767170955642-1.jpg" alt="Clove Powder" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Clove Powder</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-49-15-807Z-abce251d-chat-image-1767170955786-2.jpg" alt="Cloves" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Cloves</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-51-08-346Z-56530ea8-chat-image-1767171068327-0.jpg" alt="Coriander Powder" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Coriander Powder</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-49-15-965Z-a0787acc-chat-image-1767170955945-3.jpg" alt="Coriander Seeds" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Coriander Seeds</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-51-08-511Z-2ffe9f80-chat-image-1767171068492-1.jpg" alt="Cumin Powder" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Cumin Powder</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-51-08-678Z-055da702-chat-image-1767171068660-2.jpg" alt="Cumin Seeds" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Cumin Seeds</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-51-08-844Z-e7ec1548-chat-image-1767171068824-3.jpg" alt="Fennel Powder" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Fennel Powder</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-53-07-193Z-613c2a5e-chat-image-1767171187173-1.jpg" alt="Fennel Seeds" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Fennel Seeds</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-53-07-024Z-411944c5-chat-image-1767171187002-0.jpg" alt="Fenugreek Powder" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Fenugreek Powder</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-53-07-499Z-06abda09-chat-image-1767171187480-3.jpg" alt="Fenugreek Seeds" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Fenugreek Seeds</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-56-08-366Z-585a8186-chat-image-1767171368346-1.jpg" alt="Mustard Powder" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Mustard Powder</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-56-08-460Z-0cbc5a4e-chat-image-1767171368441-2.jpg" alt="Mustard Seeds" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Mustard Seeds</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-56-08-185Z-056f8792-chat-image-1767171368166-0.jpg" alt="Nutmeg" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Nutmeg</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-56-08-602Z-e969b02e-chat-image-1767171368582-3.jpg" alt="Nutmeg Powder" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Nutmeg Powder</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-58-22-873Z-e6e95494-chat-image-1767171502855-0.jpg" alt="Saffron" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Saffron</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-58-23-001Z-7e701c2d-chat-image-1767171502982-1.jpg" alt="Turmeric Powder" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Turmeric Powder</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2>Our Product Range</h2>
+            
+            <h3>Premium Spices</h3>
+            <ul>
+                <li><strong>Turmeric (Haldi)</strong> - Known for its vibrant color and health benefits</li>
+                <li><strong>Red Chili Powder</strong> - Adds heat and flavor to any dish</li>
+                <li><strong>Cumin Seeds (Jeera)</strong> - Essential for Indian cooking</li>
+                <li><strong>Coriander Powder (Dhania)</strong> - Aromatic and flavorful</li>
+                <li><strong>Garam Masala</strong> - Traditional spice blend</li>
+                <li><strong>Black Pepper</strong> - The king of spices</li>
+                <li><strong>Cardamom (Elaichi)</strong> - Premium quality green and black varieties</li>
+                <li><strong>Cloves (Laung)</strong> - Aromatic and medicinal</li>
+                <li><strong>Cinnamon (Dalchini)</strong> - Sweet and warming spice</li>
+            </ul>
 
-            <!-- Indian Pulses Section -->
-            <div class="category-section">
-                <div class="category-header">
-                    <h2><span>Indian</span> Pulses</h2>
-                </div>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-39-14-649Z-d12cc3cd-chat-image-1767170354632-0.jpg" alt="Adzuki Beans" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Adzuki Beans</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-39-14-854Z-52e54091-chat-image-1767170354836-1.jpg" alt="Black Beans" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Black Beans</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-39-15-019Z-41b38b3a-chat-image-1767170355000-2.jpg" alt="Black Chickpeas" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Black Chickpeas</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-39-15-202Z-63499e47-chat-image-1767170355182-3.jpg" alt="Black-Eyed Peas" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Black-Eyed Peas</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-40-26-600Z-9c33a55e-chat-image-1767170426582-0.jpg" alt="Black Lentils/Masoor Dal" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Black Lentils/Masoor Dal</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-40-26-770Z-4501a7b4-chat-image-1767170426752-1.jpg" alt="Brown Lentils/Masoor Dal" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Brown Lentils/Masoor Dal</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-40-26-859Z-2c27ce86-chat-image-1767170426840-2.jpg" alt="Chickpeas" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Chickpeas</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-40-26-960Z-493cf902-chat-image-1767170426943-3.jpg" alt="Horse Gram / Kulthi Dal" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Horse Gram / Kulthi Dal</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-41-47-317Z-d07578d4-chat-image-1767170507298-2.jpg" alt="Kidney Beans" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Kidney Beans</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T09-02-01-489Z-3309d352-chat-image-1767171721468-0.jpg" alt="Lotus Seeds" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Lotus Seeds</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-41-47-061Z-ebfabb64-chat-image-1767170507042-0.jpg" alt="Moth Bean" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Moth Bean</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-41-47-168Z-b592d231-chat-image-1767170507148-1.jpg" alt="Mung Beans" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Mung Beans</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-41-47-427Z-7e1bf83b-chat-image-1767170507408-3.jpg" alt="Red Lentils/Masoor Dal" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Red Lentils/Masoor Dal</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-43-12-439Z-5e0de84c-chat-image-1767170592420-0.jpg" alt="Red Split Lentils" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Red Split Lentils</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-43-12-733Z-a976a526-chat-image-1767170592714-2.jpg" alt="Split Black Gram / Urad Dal" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Split Black Gram / Urad Dal</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T08-43-12-567Z-db96ce46-chat-image-1767170592548-1.jpg" alt="Split Pigeon Peas/Toor Dal" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">Split Pigeon Peas/Toor Dal</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h3>Quality Pulses (Dal)</h3>
+            <ul>
+                <li><strong>Toor Dal (Pigeon Peas)</strong> - Staple protein source</li>
+                <li><strong>Moong Dal (Green Gram)</strong> - Nutritious and easy to digest</li>
+                <li><strong>Chana Dal (Split Chickpeas)</strong> - Rich in protein and fiber</li>
+                <li><strong>Masoor Dal (Red Lentils)</strong> - Quick cooking and nutritious</li>
+                <li><strong>Urad Dal (Black Gram)</strong> - Essential for South Indian cuisine</li>
+                <li><strong>Rajma (Kidney Beans)</strong> - Popular in North Indian dishes</li>
+                <li><strong>Kabuli Chana (Chickpeas)</strong> - Versatile and protein-rich</li>
+            </ul>
 
-            <!-- Why Choose Section -->
-            <div class="highlight-box">
-                <h3>Why Choose Our Products?</h3>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <h4>✓ Premium Quality</h4>
-                        <p>Sourced from trusted suppliers in India</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>✓ Global Delivery</h4>
-                        <p>We ship to any location worldwide</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>✓ Bulk Orders</h4>
-                        <p>Competitive pricing for large quantities</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>✓ Quality Assurance</h4>
-                        <p>All products meet international standards</p>
-                    </div>
-                </div>
-            </div>
+            <h2>Why Choose Our Products?</h2>
+            <ul>
+                <li><strong>Authentic Quality</strong> - Sourced directly from trusted Indian suppliers</li>
+                <li><strong>Freshness Guaranteed</strong> - Proper storage and handling throughout the supply chain</li>
+                <li><strong>Competitive Pricing</strong> - Direct sourcing ensures best market rates</li>
+                <li><strong>Reliable Supply</strong> - Consistent availability and timely delivery</li>
+                <li><strong>Quality Assurance</strong> - Rigorous quality checks before export</li>
+                <li><strong>Custom Packaging</strong> - Available in various pack sizes to suit your needs</li>
+                <li><strong>Global Shipping</strong> - Efficient logistics to deliver worldwide</li>
+            </ul>
+
+            <h2>Our Commitment</h2>
+            <p>We understand the importance of authentic Indian flavors in your kitchen or business. That's why we maintain strict quality standards and work closely with our suppliers to ensure that every product meets international food safety regulations while preserving the traditional taste and aroma that makes Indian spices and pulses so special.</p>
+
+            <p>Whether you're a restaurant owner, food distributor, or retail business looking to stock premium Indian products, MMI Logitek Fzco is your trusted partner for quality spices and pulses.</p>
         </div>
     </section>
 
     <section class="cta-section">
-        <h2>Interested in Our Products?</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Contact us for bulk order inquiries</p>
+        <h2>Get in Touch</h2>
         <a href="index.html#contact" class="cta-button">Contact Us</a>
-        <a href="https://wa.me/971585881060" target="_blank" class="cta-button whatsapp-button">WhatsApp Us</a>
     </section>
 
     <footer class="footer">
