@@ -51,6 +51,18 @@
             gap: 1rem;
         }
         
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo-link:hover {
+            opacity: 0.8;
+        }
+        
         .logo-img {
             height: 60px;
             width: auto;
@@ -337,10 +349,12 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo-section">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg" alt="MMI Logitek" class="logo-img">
-                <div class="logo-text">
-                    <h2>MMI Logitek</h2>
-                </div>
+                <a href="index.html" class="logo-link">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg" alt="MMI Logitek" class="logo-img">
+                    <div class="logo-text">
+                        <h2>MMI Logitek</h2>
+                    </div>
+                </a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
