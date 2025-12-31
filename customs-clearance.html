@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customs Clearance Services | MMI Logitek</title>
-    <meta name="description" content="Comprehensive import and export customs clearance services ensuring smooth, accurate, and compliant cargo movement.">
+    <meta name="description" content="Expert customs clearance services for import and export with MMI Logitek Fzco.">
+    <link rel="icon" type="image/png" href="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -50,6 +51,18 @@
             gap: 1rem;
         }
         
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo-link:hover {
+            opacity: 0.8;
+        }
+        
         .logo-img {
             height: 60px;
             width: auto;
@@ -89,13 +102,11 @@
             transition: width 0.3s ease;
         }
         
-        .nav-menu li a:hover::after,
-        .nav-menu li a.active::after {
+        .nav-menu li a:hover::after {
             width: 100%;
         }
         
-        .nav-menu li a:hover,
-        .nav-menu li a.active {
+        .nav-menu li a:hover {
             color: #ff6b35;
         }
         
@@ -108,38 +119,42 @@
             overflow: hidden;
         }
         
-        .hero-bg {
+        .hero-image {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            z-index: 1;
         }
         
-        .hero-overlay {
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.75) 100%);
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.85) 100%);
+            z-index: 2;
         }
         
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
             color: white;
+            text-align: center;
+            width: 100%;
         }
         
         .hero-title {
             font-size: 4rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            line-height: 1.2;
         }
         
         .content-section {
@@ -152,71 +167,61 @@
             margin: 0 auto;
         }
         
-        .content-container h2 {
+        .content-container h1 {
             font-size: 2.5rem;
             color: #1e3c72;
             margin-bottom: 2rem;
             font-weight: 700;
         }
         
-        .content-container h2 span {
-            color: #ff6b35;
+        .content-container h2 {
+            font-size: 2rem;
+            color: #1e3c72;
+            margin: 3rem 0 1.5rem;
+            font-weight: 600;
+        }
+        
+        .content-container h3 {
+            font-size: 1.5rem;
+            color: #2a5298;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
         }
         
         .content-container p {
             color: #666;
             line-height: 1.9;
-            margin-bottom: 1.5rem;
             font-size: 1.1rem;
+            margin-bottom: 1.5rem;
         }
         
         .content-container ul {
-            list-style: none;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
+            padding-left: 2rem;
         }
         
-        .content-container ul li {
+        .content-container li {
             color: #666;
             line-height: 1.9;
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
             font-size: 1.1rem;
+            margin-bottom: 0.8rem;
         }
         
-        .content-container ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #ff6b35;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-        
-        .highlight-box {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid #ff6b35;
-            margin: 2rem 0;
-        }
-        
-        .highlight-box h3 {
+        .content-container strong {
             color: #1e3c72;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-weight: 600;
         }
         
         .cta-section {
             padding: 4rem 2rem;
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             text-align: center;
-            color: white;
         }
         
         .cta-section h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
+            color: white;
         }
         
         .cta-button {
@@ -230,6 +235,7 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            margin: 0.5rem;
         }
         
         .cta-button:hover {
@@ -254,8 +260,12 @@
                 font-size: 2.5rem;
             }
             
-            .content-container h2 {
+            .content-container h1 {
                 font-size: 2rem;
+            }
+            
+            .content-container h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -264,15 +274,17 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo-section">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg" alt="MMI Logitek" class="logo-img">
-                <div class="logo-text">
-                    <h2>MMI Logitek</h2>
-                </div>
+                <a href="index.html" class="logo-link">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg" alt="MMI Logitek" class="logo-img">
+                    <div class="logo-text">
+                        <h2>MMI Logitek</h2>
+                    </div>
+                </a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#services" class="active">Services</a></li>
+                <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#agency">Agency Network</a></li>
                 <li><a href="index.html#contact">Contact Us</a></li>
             </ul>
@@ -280,8 +292,7 @@
     </nav>
 
     <section class="hero">
-        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-727Z-17d45f5d-chat-image-1767102600706-2.jpg" alt="Customs Clearance Services" class="hero-bg">
-        <div class="hero-overlay"></div>
+        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-878Z-9593580f-chat-image-1767102600860-3.jpg" alt="Customs Clearance Services" class="hero-image">
         <div class="hero-content">
             <h1 class="hero-title">Customs Clearance Services</h1>
         </div>
@@ -291,37 +302,33 @@
         <div class="content-container">
             <p>Customs clearance is a critical process in international trade, involving the legal movement of goods across borders. At MMI Logitek Fzco, we offer comprehensive import and export customs clearance services, ensuring your cargo moves smoothly through official customs procedures with accuracy, speed, and compliance.</p>
 
-            <h2>What is <span>Customs Clearance?</span></h2>
+            <h2>What is Customs Clearance?</h2>
             <p>Customs clearance involves completing all regulatory formalities required by the customs authorities to allow goods to be:</p>
             <ul>
                 <li>Imported into a country</li>
                 <li>Exported out of a country</li>
                 <li>Transferred under special customs procedures</li>
             </ul>
-            
+
             <p>We ensure that your goods are delivered in perfect condition, maintaining the highest standards of care and professionalism throughout the journey.</p>
 
-            <div class="highlight-box">
-                <h3>Our Export Customs Clearance Services Include:</h3>
-                <ul>
-                    <li>Preparation of Shipping Bill based on the Shipper's Letter of Instruction</li>
-                    <li>Product classification for claiming duty drawbacks</li>
-                    <li>Obtaining Customs Out-Charge</li>
-                    <li>Coordination with international carriers for cargo dispatch</li>
-                </ul>
-            </div>
+            <h3>Our Export Customs Clearance Services Include:</h3>
+            <ul>
+                <li>Preparation of Shipping Bill based on the Shipper's Letter of Instruction</li>
+                <li>Product classification for claiming duty drawbacks</li>
+                <li>Obtaining Customs Out-Charge</li>
+                <li>Coordination with international carriers for cargo dispatch</li>
+            </ul>
 
-            <div class="highlight-box">
-                <h3>Our Import Customs Clearance Services Cover:</h3>
-                <ul>
-                    <li>Accurate HSN Code Classification and determination of applicable duty rates</li>
-                    <li>Preparation and filing of Bill of Entry</li>
-                    <li>Compliance with all relevant customs procedures and documentation</li>
-                    <li>Swift customs clearance processing to minimize delays</li>
-                </ul>
-            </div>
+            <h3>Our Import Customs Clearance Services Cover:</h3>
+            <ul>
+                <li>Accurate HSN Code Classification and determination of applicable duty rates</li>
+                <li>Preparation and filing of Bill of Entry</li>
+                <li>Compliance with all relevant customs procedures and documentation</li>
+                <li>Swift customs clearance processing to minimize delays</li>
+            </ul>
 
-            <h2>Why Choose us for <span>Custom Clearance?</span></h2>
+            <h2>Why Choose us for Custom Clearance?</h2>
             <ul>
                 <li>Experienced customs handling team</li>
                 <li>Up-to-date knowledge of customs laws and tariff structures</li>
