@@ -445,34 +445,102 @@
         }
         
         .contact-section {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
+            background: #f8f9fa;
             padding: 6rem 2rem;
-            text-align: center;
         }
         
-        .contact-info {
-            max-width: 800px;
+        .contact-container {
+            max-width: 1200px;
             margin: 0 auto;
         }
         
-        .contact-item {
-            margin: 2rem 0;
+        .contact-header {
+            text-align: center;
+            margin-bottom: 4rem;
         }
         
-        .contact-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+        .contact-header h2 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
         
-        .contact-item p, .contact-item a {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-        }
-        
-        .contact-item a:hover {
+        .contact-header h2 span {
             color: #ff6b35;
+        }
+        
+        .contact-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-card h3 {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .contact-card p,
+        .contact-card a {
+            color: #666;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-card a:hover {
+            color: #ff6b35;
+        }
+        
+        .contact-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .contact-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+        
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
         }
         
         .footer {
@@ -495,6 +563,10 @@
             .stats-container {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -695,25 +767,35 @@
     </section>
 
     <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Get In <span>Touch</span></h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>📍 Address</h3>
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>Get In <span>Touch</span></h2>
+                <p>We're here to help with all your logistics needs</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Our Location</h3>
                     <p>Dubai, United Arab Emirates</p>
                 </div>
-                <div class="contact-item">
-                    <h3>📧 Email</h3>
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Us</h3>
                     <p><a href="mailto:info@mmilogitek.com">info@mmilogitek.com</a></p>
                 </div>
-                <div class="contact-item">
-                    <h3>📱 Phone</h3>
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>Call Us</h3>
                     <p><a href="tel:+971585881060">+971 58 588 1060</a></p>
                 </div>
-                <div class="contact-item">
-                    <h3>💬 WhatsApp</h3>
-                    <p><a href="https://wa.me/971585881060" target="_blank">Chat with us on WhatsApp</a></p>
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/971585881060" target="_blank">Chat with us</a></p>
                 </div>
+            </div>
+            <div class="contact-cta">
+                <a href="mailto:info@mmilogitek.com" class="contact-button">Send us a Message</a>
             </div>
         </div>
     </section>
