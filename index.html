@@ -279,6 +279,94 @@
             margin: 0 auto;
         }
         
+        .trusted-section {
+            padding: 6rem 2rem;
+            background: #f8f9fa;
+        }
+        
+        .trusted-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .trusted-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .trusted-content h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .trusted-content h2 span {
+            color: #ff6b35;
+        }
+        
+        .trusted-content p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .know-more-btn {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .know-more-btn:hover {
+            background: #f7931e;
+            transform: translateY(-2px);
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            padding: 4rem 2rem;
+        }
+        
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -459,6 +547,18 @@
             opacity: 0.8;
         }
         
+        @media (max-width: 968px) {
+            .trusted-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
@@ -472,8 +572,20 @@
                 font-size: 2rem;
             }
             
+            .trusted-content h2 {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+            
             .services-grid,
             .agency-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
                 grid-template-columns: 1fr;
             }
         }
@@ -517,6 +629,41 @@
             <h1 class="hero-title">Global Logistics & Trading Solutions</h1>
             <p class="hero-subtitle">Your trusted partner for international freight forwarding, customs clearance, and premium Indian spices & pulses trading</p>
             <a href="#contact" class="hero-cta">Get Started</a>
+        </div>
+    </section>
+
+    <section class="trusted-section">
+        <div class="trusted-container">
+            <div class="trusted-image-wrapper">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T12-14-11-266Z-d59ab9d8-chat-image-1767183251247-0.jpg" alt="Port Operations" class="trusted-image">
+            </div>
+            <div class="trusted-content">
+                <h2>Trusted <span>Global Shipping & Logistics Solutions</span></h2>
+                <p>Millenium Marine International is a trusted name in the global shipping and logistics industry since 2014. As a leading NVOCC and Freight Forwarding company, we specialize in providing seamless, reliable, and cost-effective cargo transport solutions across major international trade routes.</p>
+                <p>Whether you're shipping to or from Jebel Ali, Dammam, Port Klang, Chittagong, Dhaka, Cat Lai, Haiphong, Ho Chi Minh City, Yangon, or across the European, African, and US sectors, we have the expertise, network, and equipment to ensure timely and secure delivery of your cargo.</p>
+                <a href="#about" class="know-more-btn">KNOW MORE</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">11</div>
+                <div class="stat-label">Years Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5000</div>
+                <div class="stat-label">Our Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2000</div>
+                <div class="stat-label">Containers Delivered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">9</div>
+                <div class="stat-label">Country Presence</div>
+            </div>
         </div>
     </section>
 
