@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMI Logitek | Global Shipping & Logistics Solutions</title>
-    <meta name="description" content="Trusted global shipping and logistics solutions. NVOCC, Freight Forwarding, Container Trading & Leasing services worldwide. 10+ years of excellence.">
+    <title>MMI Logitek - Global Logistics & Trading Solutions</title>
+    <meta name="description" content="MMI Logitek Fzco - Your trusted partner for international logistics, freight forwarding, and Indian spices & pulses trading.">
     <link rel="icon" type="image/png" href="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,6 @@
             overflow-x: hidden;
         }
         
-        /* Navigation */
         .navbar {
             position: fixed;
             top: 0;
@@ -71,10 +70,6 @@
             align-items: center;
         }
         
-        .nav-menu li {
-            position: relative;
-        }
-        
         .nav-menu li a {
             color: #333;
             text-decoration: none;
@@ -83,9 +78,6 @@
             transition: all 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
         }
         
         .nav-menu li a::after {
@@ -109,63 +101,6 @@
             color: #ff6b35;
         }
         
-        /* Dropdown Menu */
-        .dropdown {
-            position: relative;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            min-width: 300px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-            border-radius: 10px;
-            padding: 1rem 0;
-            margin-top: 0.5rem;
-            z-index: 1000;
-        }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        
-        .dropdown-content a {
-            color: #333;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            display: block;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .dropdown-content a:hover {
-            background: #f8f9fa;
-            color: #ff6b35;
-            padding-left: 2rem;
-        }
-        
-        .dropdown-arrow {
-            font-size: 0.7rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .dropdown:hover .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #1e3c72;
-        }
-        
-        /* Hero Section */
         .hero {
             margin-top: 90px;
             position: relative;
@@ -173,30 +108,19 @@
             display: flex;
             align-items: center;
             overflow: hidden;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
         }
         
-        .hero-bg {
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            animation: zoomIn 20s ease-in-out infinite alternate;
-        }
-        
-        @keyframes zoomIn {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
-        }
-        
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.75) 100%);
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920') center/cover;
+            opacity: 0.15;
+            z-index: 1;
         }
         
         .hero-content {
@@ -209,30 +133,19 @@
         }
         
         .hero-title {
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
-            animation: fadeInUp 1s ease;
             line-height: 1.2;
+            animation: fadeInUp 1s ease;
         }
         
         .hero-subtitle {
             font-size: 1.5rem;
-            font-weight: 300;
             margin-bottom: 2rem;
-            animation: fadeInUp 1.2s ease;
-            max-width: 700px;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            font-weight: 300;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s both;
         }
         
         .hero-cta {
@@ -246,7 +159,7 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
-            animation: fadeInUp 1.4s ease;
+            animation: fadeInUp 1s ease 0.4s both;
         }
         
         .hero-cta:hover {
@@ -254,91 +167,28 @@
             box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
         }
         
-        /* About Section */
-        .about-section {
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section {
             padding: 6rem 2rem;
-            background: white;
         }
         
-        .about-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .about-image {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .about-content h2 {
-            font-size: 3rem;
-            color: #1e3c72;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .about-content h2 span {
-            color: #ff6b35;
-        }
-        
-        .about-content p {
-            color: #666;
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-        
-        /* Stats Section */
-        .stats-section {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-        }
-        
-        .stats-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            text-align: center;
-        }
-        
-        .stat-item {
-            animation: fadeInUp 1s ease;
-        }
-        
-        .stat-number {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .stat-label {
-            font-size: 1.2rem;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-        
-        /* Services Section */
-        .services-section {
-            padding: 6rem 2rem;
+        .section-alt {
             background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .section-header {
@@ -346,342 +196,187 @@
             margin-bottom: 4rem;
         }
         
-        .section-header h2 {
-            font-size: 3rem;
+        .section-title {
+            font-size: 2.5rem;
             color: #1e3c72;
             margin-bottom: 1rem;
             font-weight: 700;
         }
         
-        .section-header h2 span {
+        .section-title span {
             color: #ff6b35;
         }
         
-        .services-grid {
-            max-width: 1400px;
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
             margin: 0 auto;
+        }
+        
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
+            margin-top: 3rem;
         }
         
         .service-card {
             background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-        
-        .service-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
         
         .service-icon {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
         }
         
-        .service-icon::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 10s linear infinite;
-        }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .service-icon h3 {
-            color: white;
+        .service-title {
             font-size: 1.5rem;
-            position: relative;
-            z-index: 2;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
         
-        .service-content {
-            padding: 2rem;
-        }
-        
-        .service-content p {
+        .service-description {
             color: #666;
             line-height: 1.8;
         }
         
-        /* Agency Network Section */
-        .agency-section {
-            padding: 6rem 2rem;
+        .spices-section {
             background: white;
+            padding: 6rem 2rem;
         }
         
-        .agency-content {
-            max-width: 1400px;
+        .spices-hero {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .spices-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .spices-content {
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
         
-        .agency-content h2 {
-            font-size: 3rem;
-            color: #1e3c72;
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-        
-        .agency-content h2 span {
-            color: #ff6b35;
-        }
-        
-        .agency-content p {
-            font-size: 1.2rem;
+        .spices-content p {
+            font-size: 1.1rem;
             color: #666;
             line-height: 1.9;
-            max-width: 900px;
-            margin: 0 auto 3rem;
+            margin-bottom: 2rem;
         }
         
-        .network-grid {
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
+        }
+        
+        .agency-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
         
-        .network-card {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            padding: 2.5rem;
-            border-radius: 20px;
-            color: white;
-            transition: all 0.4s ease;
-        }
-        
-        .network-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(30, 60, 114, 0.3);
-        }
-        
-        .network-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        .network-card p {
-            color: white;
-            opacity: 0.95;
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-        
-        /* Why Choose Section */
-        .why-choose {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-        }
-        
-        .features-grid {
-            max-width: 1400px;
-            margin: 3rem auto 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-        
-        .feature-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.4s ease;
-        }
-        
-        .feature-card:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateY(-10px);
-        }
-        
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .feature-icon svg {
-            width: 35px;
-            height: 35px;
-            fill: white;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            text-align: center;
-        }
-        
-        .feature-card p {
-            opacity: 0.9;
-            line-height: 1.8;
-            text-align: center;
-        }
-        
-        /* Contact Section */
-        .contact-section {
-            padding: 6rem 2rem;
+        .agency-card {
             background: white;
-        }
-        
-        .contact-container {
-            max-width: 1000px;
-            margin: 0 auto;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             text-align: center;
+            transition: all 0.3s ease;
         }
         
-        .contact-container h2 {
-            font-size: 3rem;
-            color: #ff6b35;
-            margin-bottom: 2rem;
-            font-weight: 700;
+        .agency-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
         
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .agency-name {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
         
-        .contact-card {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            color: white;
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(30, 60, 114, 0.3);
-        }
-        
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1.5rem;
-            background: #ff6b35;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .contact-icon svg {
-            width: 30px;
-            height: 30px;
-            fill: white;
-        }
-        
-        .contact-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        
-        .contact-card a {
-            color: white;
-            text-decoration: none;
+        .agency-location {
+            color: #666;
             font-size: 1rem;
-            transition: opacity 0.3s ease;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 6rem 2rem;
             text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100%;
         }
         
-        .contact-card a:hover {
-            opacity: 0.8;
+        .contact-info {
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        .whatsapp-card {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        .contact-item {
+            margin: 2rem 0;
         }
         
-        /* Footer */
+        .contact-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-item p, .contact-item a {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            color: #ff6b35;
+        }
+        
         .footer {
             background: #0a1929;
             color: white;
-            padding: 1.5rem 2rem;
+            padding: 2rem;
             text-align: center;
         }
         
         .footer p {
             opacity: 0.8;
-            font-size: 0.95rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 968px) {
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 90px;
-                flex-direction: column;
-                background: white;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
-                padding: 2rem 0;
-                gap: 1.5rem;
-            }
-            
-            .nav-menu.active {
-                left: 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .dropdown-content {
-                position: static;
-                box-shadow: none;
-                display: none;
-                margin-top: 0;
-            }
-            
-            .dropdown.active .dropdown-content {
-                display: block;
-            }
         }
         
         @media (max-width: 768px) {
@@ -693,33 +388,18 @@
                 font-size: 1.2rem;
             }
             
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-header h2,
-            .about-content h2,
-            .contact-container h2,
-            .agency-content h2 {
+            .section-title {
                 font-size: 2rem;
             }
             
-            .services-grid {
+            .services-grid,
+            .agency-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-card a {
-                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo-section">
@@ -728,310 +408,145 @@
                     <h2>MMI Logitek</h2>
                 </div>
             </div>
-            <ul class="nav-menu" id="navMenu">
+            <ul class="nav-menu">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li class="dropdown">
-                    <a href="#services">
-                        Services
-                        <span class="dropdown-arrow">▼</span>
-                    </a>
-                    <div class="dropdown-content">
-                        <a href="nvocc.html">NVOCC</a>
-                        <a href="container-trading.html">Container Trading & Leasing</a>
-                        <a href="container-domestication.html">Container Domestication</a>
-                        <a href="freight-forwarding.html">Freight Forwarding</a>
-                        <a href="transportation.html">Transportation</a>
-                        <a href="customs-clearance.html">Customs Clearance</a>
-                        <a href="vessel-operating-agent.html">Vessel Operating Agent</a>
-                        <a href="indian-spices-pulses.html">Indian Spices & Pulses Trading</a>
-                    </div>
-                </li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#agency">Agency Network</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-042Z-0a836d50-chat-image-1767098879023-0.jpg" alt="MMI Logitek" class="hero-bg">
-        <div class="hero-overlay"></div>
+    <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">Trusted Global<br>Shipping & Logistics</h1>
-            <p class="hero-subtitle">Seamless, reliable, and cost-effective cargo transport solutions across major international trade routes</p>
-            <a href="#contact" class="hero-cta">Let Us Know Your Requirements</a>
+            <h1 class="hero-title">Global Logistics & Trading Solutions</h1>
+            <p class="hero-subtitle">Your trusted partner for international freight forwarding, customs clearance, and premium Indian spices & pulses trading</p>
+            <a href="#contact" class="hero-cta">Get Started</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="about-container">
-            <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-308Z-804d47e3-chat-image-1767098879286-2.jpg" alt="MMI Logitek Operations" class="about-image">
-            <div class="about-content">
-                <h2><span>About</span> Us</h2>
-                <p>MMI Logitek Fzco is a trusted name in the global shipping and logistics industry with over 10 years of excellence. As a leading NVOCC and Freight Forwarding company, we specialize in providing seamless, reliable, and cost-effective cargo transport solutions across major international trade routes.</p>
-                <p>Whether you're shipping to or from Jebel Ali, Dammam, Port Klang, Chittagong, Dhaka, Cat Lai, Haiphong, Ho Chi Minh City, Yangon, or across the European, African, and US sectors, we have the expertise, network, and equipment to ensure timely and secure delivery of your cargo.</p>
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About <span>MMI Logitek</span></h2>
+                <p class="section-subtitle">MMI Logitek Fzco is a leading logistics and trading company based in Dubai, UAE. We specialize in comprehensive freight forwarding services and the export of premium Indian spices and pulses to customers worldwide.</p>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Years Completed</div>
+    <section id="services" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span>Services</span></h2>
+                <p class="section-subtitle">Comprehensive logistics and trading solutions tailored to your needs</p>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">5000+</div>
-                <div class="stat-label">Happy Clients</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">2000+</div>
-                <div class="stat-label">Containers Delivered</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">9+</div>
-                <div class="stat-label">Country Presence</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <div class="section-header">
-            <h2>Your <span>Trusted Source</span> for Superior Services</h2>
-        </div>
-        <div class="services-grid">
-            <a href="nvocc.html" class="service-card">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-469Z-b3fb2d85-chat-image-1767102600449-0.jpg" alt="NVOCC Services" class="service-image">
-                <div class="service-icon">
-                    <h3>NVOCC</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚢</div>
+                    <h3 class="service-title">Sea Freight</h3>
+                    <p class="service-description">Reliable ocean freight services for FCL and LCL shipments worldwide with competitive rates and timely delivery.</p>
                 </div>
-                <div class="service-content">
-                    <p>As a proud NVOCC, we offer flexible, efficient ocean freight services akin to traditional steamship lines for today's global trade.</p>
+                <div class="service-card">
+                    <div class="service-icon">✈️</div>
+                    <h3 class="service-title">Air Freight</h3>
+                    <p class="service-description">Fast and secure air cargo solutions for time-sensitive shipments to any destination globally.</p>
                 </div>
-            </a>
-            <a href="container-trading.html" class="service-card">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-426Z-8a81e9bb-chat-image-1767098879407-3.jpg" alt="Container Trading" class="service-image">
-                <div class="service-icon">
-                    <h3>Container Trading & Leasing</h3>
+                <div class="service-card">
+                    <div class="service-icon">🚛</div>
+                    <h3 class="service-title">Land Transportation</h3>
+                    <p class="service-description">Efficient road freight services across the GCC and beyond with door-to-door delivery options.</p>
                 </div>
-                <div class="service-content">
-                    <p>We offer cost-effective container trading and leasing for global logistics, storage, and custom applications, with diverse sizes for all needs.</p>
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3 class="service-title">Customs Clearance</h3>
+                    <p class="service-description">Expert customs brokerage services ensuring smooth and compliant clearance of your cargo.</p>
                 </div>
-            </a>
-            <a href="container-domestication.html" class="service-card">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-201Z-9cb540c4-chat-image-1767098879181-1.jpg" alt="Container Domestication" class="service-image">
-                <div class="service-icon">
-                    <h3>Container Domestication</h3>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3 class="service-title">Warehousing</h3>
+                    <p class="service-description">Secure storage facilities with inventory management and distribution services.</p>
                 </div>
-                <div class="service-content">
-                    <p>Container domestication converts international shipping containers for local use, legally nationalizing them for a country's internal logistics network.</p>
-                </div>
-            </a>
-            <a href="freight-forwarding.html" class="service-card">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-878Z-9593580f-chat-image-1767102600860-3.jpg" alt="Freight Forwarding" class="service-image">
-                <div class="service-icon">
-                    <h3>Freight Forwarding</h3>
-                </div>
-                <div class="service-content">
-                    <p>As trusted freight forwarders, we streamline transportation for importers, exporters, and businesses from origin to destination.</p>
-                </div>
-            </a>
-            <a href="transportation.html" class="service-card">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-308Z-804d47e3-chat-image-1767098879286-2.jpg" alt="Transportation" class="service-image">
-                <div class="service-icon">
-                    <h3>Transportation</h3>
-                </div>
-                <div class="service-content">
-                    <p>Transportation is the backbone of logistics. We provide efficient, secure, cost-effective solutions tailored to your global shipping needs.</p>
-                </div>
-            </a>
-            <a href="customs-clearance.html" class="service-card">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-727Z-17d45f5d-chat-image-1767102600706-2.jpg" alt="Customs Clearance" class="service-image">
-                <div class="service-icon">
-                    <h3>Customs Clearance</h3>
-                </div>
-                <div class="service-content">
-                    <p>Customs clearance is vital for international trade. We ensure smooth, accurate, and compliant import/export customs services.</p>
-                </div>
-            </a>
-            <a href="vessel-operating-agent.html" class="service-card">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-585Z-ac165ac7-chat-image-1767102600566-1.jpg" alt="Vessel Operating Agent" class="service-image">
-                <div class="service-icon">
-                    <h3>Vessel Operating Agent</h3>
-                </div>
-                <div class="service-content">
-                    <p>We specialize in tailored vessel operating agency services, leveraging local partner networks and port expertise for seamless global operations.</p>
-                </div>
-            </a>
-            <a href="indian-spices-pulses.html" class="service-card">
-                <img src="https://images.unsplash.com/photo-1596040033229-a0b3b7d1f4c8?w=600" alt="Indian Spices & Pulses" class="service-image">
-                <div class="service-icon">
-                    <h3>Indian Spices & Pulses Trading</h3>
-                </div>
-                <div class="service-content">
-                    <p>Premium quality Indian spices and pulses exported worldwide. Authentic products sourced from trusted suppliers in India.</p>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- Agency Network Section -->
-    <section class="agency-section" id="agency">
-        <div class="agency-content">
-            <h2>Our <span>Global</span> Agency Network</h2>
-            <p>With strategic partnerships and agency networks across 9+ countries, we provide comprehensive shipping and logistics solutions worldwide. Our extensive network ensures seamless operations and reliable service delivery across all major trade routes.</p>
-            <div class="network-grid">
-                <div class="network-card">
-                    <h3>Middle East</h3>
-                    <p>Jebel Ali, Dammam, and major UAE ports</p>
-                </div>
-                <div class="network-card">
-                    <h3>Southeast Asia</h3>
-                    <p>Port Klang, Cat Lai, Haiphong, Ho Chi Minh City, Yangon</p>
-                </div>
-                <div class="network-card">
-                    <h3>South Asia</h3>
-                    <p>Chittagong, Dhaka, and major Indian ports</p>
-                </div>
-                <div class="network-card">
-                    <h3>Global Coverage</h3>
-                    <p>European, African, and US sectors</p>
+                <div class="service-card">
+                    <div class="service-icon">🌶️</div>
+                    <h3 class="service-title">Spices & Pulses Trading</h3>
+                    <p class="service-description">Premium quality Indian spices and pulses exported directly from trusted suppliers in India.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Section -->
-    <section class="why-choose">
-        <div class="section-header">
-            <h2 style="color: white;">Why <span>Choose Us?</span></h2>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                </div>
-                <h3>Global Reach</h3>
-                <p>Comprehensive shipping services to and from all major ports worldwide.</p>
+    <section class="spices-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Indian Spices & <span>Pulses Trading</span></h2>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-                </div>
-                <h3>Reliable Container Availability</h3>
-                <p>Even during shortages, we ensure container availability.</p>
+            
+            <div class="spices-hero">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-31T09-00-38-611Z-7454e6e4-chat-image-1767171638593-0.jpg" alt="Indian Spices and Pulses">
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11z"/><circle cx="17.5" cy="17.5" r="4.5"/><path d="M3 13.5h8v8H3z"/></svg>
-                </div>
-                <h3>Tailored Solutions</h3>
-                <p>We offer customized shipping and logistics plans based on your needs.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
-                </div>
-                <h3>Competitive Freight Rates</h3>
-                <p>Get the best value for your shipping requirements.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                </div>
-                <h3>Customer-Centric Approach</h3>
-                <p>Prompt communication and professional service at every step.</p>
+            
+            <div class="spices-content">
+                <p>Through our trusted partner network in India, we export premium quality Indian spices and pulses to customers worldwide. Our products are sourced directly from reliable suppliers, ensuring authenticity, freshness, and the highest quality standards.</p>
+                <p>We offer a wide range of products including cardamom, cinnamon, cloves, cumin, turmeric, various lentils, chickpeas, and many more. Whether you need bulk quantities for commercial use or specialized products for retail, we deliver excellence across the globe.</p>
+                <a href="indian-spices-pulses.html" class="cta-button">View All Products</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="contact-container">
-            <h2>Get in Touch</h2>
-            <p style="font-size: 1.2rem; color: #666;">Ready to optimize your logistics? Contact us for a customized shipping solution.</p>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    </div>
-                    <h3>Email Us</h3>
-                    <a href="mailto:Darshan@millenium.co.in">Darshan@millenium.co.in</a>
+    <section id="agency" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span>Agency Network</span></h2>
+                <p class="section-subtitle">Strategic partnerships across key global locations</p>
+            </div>
+            <div class="agency-grid">
+                <div class="agency-card">
+                    <h3 class="agency-name">Dubai Office</h3>
+                    <p class="agency-location">United Arab Emirates</p>
                 </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                    </div>
-                    <h3>Call Us</h3>
-                    <a href="tel:+971585881060">+971 58 588 1060</a>
+                <div class="agency-card">
+                    <h3 class="agency-name">Mumbai Partner</h3>
+                    <p class="agency-location">India</p>
                 </div>
-                <div class="contact-card whatsapp-card">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                    </div>
-                    <h3>WhatsApp Us</h3>
-                    <a href="https://wa.me/971585881060" target="_blank">Chat on WhatsApp</a>
+                <div class="agency-card">
+                    <h3 class="agency-name">Delhi Partner</h3>
+                    <p class="agency-location">India</p>
+                </div>
+                <div class="agency-card">
+                    <h3 class="agency-name">Chennai Partner</h3>
+                    <p class="agency-location">India</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Get In <span>Touch</span></h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📍 Address</h3>
+                    <p>Dubai, United Arab Emirates</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:info@mmilogitek.com">info@mmilogitek.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>📱 Phone</h3>
+                    <p><a href="tel:+971585881060">+971 58 588 1060</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>💬 WhatsApp</h3>
+                    <p><a href="https://wa.me/971585881060" target="_blank">Chat with us on WhatsApp</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <p>&copy; 2026 MMI Logitek Fzco. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-menu a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-            });
-        });
-        
-        // Active nav link on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-        
-        // Mobile dropdown toggle
-        const dropdown = document.querySelector('.dropdown');
-        if (window.innerWidth <= 968) {
-            dropdown.addEventListener('click', (e) => {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-            });
-        }
-    </script>
 </body>
 </html>
