@@ -133,7 +133,7 @@
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             margin-top: 0.5rem;
             padding: 0.5rem 0;
         }
@@ -146,6 +146,25 @@
         
         .dropdown-menu li {
             list-style: none;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideIn 0.3s ease forwards;
+        }
+        
+        .dropdown:hover .dropdown-menu li:nth-child(1) { animation-delay: 0.05s; }
+        .dropdown:hover .dropdown-menu li:nth-child(2) { animation-delay: 0.1s; }
+        .dropdown:hover .dropdown-menu li:nth-child(3) { animation-delay: 0.15s; }
+        .dropdown:hover .dropdown-menu li:nth-child(4) { animation-delay: 0.2s; }
+        .dropdown:hover .dropdown-menu li:nth-child(5) { animation-delay: 0.25s; }
+        .dropdown:hover .dropdown-menu li:nth-child(6) { animation-delay: 0.3s; }
+        .dropdown:hover .dropdown-menu li:nth-child(7) { animation-delay: 0.35s; }
+        .dropdown:hover .dropdown-menu li:nth-child(8) { animation-delay: 0.4s; }
+        
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
         
         .dropdown-menu li a {
@@ -154,6 +173,20 @@
             color: #333;
             text-decoration: none;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dropdown-menu li a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
         }
         
         .dropdown-menu li a::after {
@@ -161,9 +194,14 @@
         }
         
         .dropdown-menu li a:hover {
-            background: #f8f9fa;
+            background: linear-gradient(90deg, rgba(255, 107, 53, 0.1) 0%, transparent 100%);
             color: #ff6b35;
             padding-left: 2rem;
+            transform: translateX(5px);
+        }
+        
+        .dropdown-menu li a:hover::before {
+            transform: scaleY(1);
         }
         
         .hero {
@@ -608,14 +646,14 @@
                 <li class="dropdown">
                     <a href="#services">Services</a>
                     <ul class="dropdown-menu">
-                        <li><a href="nvocc.html">🚢 NVOCC</a></li>
-                        <li><a href="container-trading.html">📦 Container Trading & Leasing</a></li>
-                        <li><a href="container-domestication.html">🏠 Container Domestication</a></li>
-                        <li><a href="freight-forwarding.html">✈️ Freight Forwarding</a></li>
-                        <li><a href="transportation.html">🚛 Transportation</a></li>
-                        <li><a href="customs-clearance.html">📋 Customs Clearance</a></li>
-                        <li><a href="vessel-operating.html">⚓ Vessel Operating Agent</a></li>
-                        <li><a href="indian-spices-pulses.html">🌶️ Indian Spices & Pulses</a></li>
+                        <li><a href="nvocc.html">NVOCC</a></li>
+                        <li><a href="container-trading.html">Container Trading & Leasing</a></li>
+                        <li><a href="container-domestication.html">Container Domestication</a></li>
+                        <li><a href="freight-forwarding.html">Freight Forwarding</a></li>
+                        <li><a href="transportation.html">Transportation</a></li>
+                        <li><a href="customs-clearance.html">Customs Clearance</a></li>
+                        <li><a href="vessel-operating.html">Vessel Operating Agent</a></li>
+                        <li><a href="indian-spices-pulses.html">Indian Spices & Pulses</a></li>
                     </ul>
                 </li>
                 <li><a href="#agency">Agency Network</a></li>
