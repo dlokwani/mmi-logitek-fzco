@@ -49,6 +49,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            z-index: 1001;
         }
         
         .logo-link {
@@ -72,6 +73,38 @@
             font-size: 1.5rem;
             color: #1e3c72;
             font-weight: 700;
+        }
+        
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+            width: 30px;
+            height: 24px;
+            justify-content: space-between;
+        }
+        
+        .hamburger-line {
+            width: 100%;
+            height: 3px;
+            background: #1e3c72;
+            transition: 0.4s;
+            border-radius: 3px;
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
         }
         
         .nav-menu {
@@ -400,7 +433,96 @@
             font-size: 0.95rem;
         }
         
+        /* Mobile Responsive */
         @media (max-width: 768px) {
+            .nav-container {
+                padding: 0.8rem 1.5rem;
+            }
+            
+            .logo-img {
+                height: 45px;
+            }
+            
+            .logo-text h2 {
+                font-size: 1.2rem;
+            }
+            
+            /* Show hamburger menu on mobile */
+            .hamburger-menu {
+                display: flex;
+            }
+            
+            /* Hide desktop menu, show mobile menu */
+            .nav-menu {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: white;
+                width: 280px;
+                height: calc(100vh - 70px);
+                text-align: left;
+                transition: 0.4s ease-in-out;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                gap: 0;
+                padding: 2rem 0;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0;
+                width: 100%;
+            }
+            
+            .nav-menu li a {
+                padding: 1rem 1.5rem;
+                display: block;
+                font-size: 1.05rem;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .nav-menu li a::after {
+                display: none;
+            }
+            
+            /* Mobile dropdown styles */
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: #f8f9fa;
+                margin-top: 0;
+                border-radius: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                max-height: 500px;
+            }
+            
+            .dropdown-menu li {
+                opacity: 1;
+                transform: none;
+                animation: none;
+            }
+            
+            .dropdown-menu li a {
+                padding: 0.8rem 2rem;
+                font-size: 0.95rem;
+            }
+            
+            .dropdown-menu li a:hover {
+                padding-left: 2.5rem;
+            }
+            
             .hero-title {
                 font-size: 2.5rem;
             }
@@ -426,24 +548,29 @@
                     </div>
                 </a>
             </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li class="dropdown">
+                <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+                <li><a href="index.html#about" onclick="closeMenu()">About</a></li>
+                <li class="dropdown" onclick="toggleDropdown(event)">
                     <a href="index.html#services">Services</a>
                     <ul class="dropdown-menu">
-                        <li><a href="nvocc.html">NVOCC</a></li>
-                        <li><a href="container-trading.html">Container Trading & Leasing</a></li>
-                        <li><a href="container-domestication.html">Container Domestication</a></li>
-                        <li><a href="freight-forwarding.html">Freight Forwarding</a></li>
-                        <li><a href="transportation.html">Transportation</a></li>
-                        <li><a href="customs-clearance.html">Customs Clearance</a></li>
-                        <li><a href="vessel-operating.html">Vessel Operating Agent</a></li>
-                        <li><a href="indian-spices-pulses.html">Indian Spices & Pulses</a></li>
+                        <li><a href="nvocc.html" onclick="closeMenu()">NVOCC</a></li>
+                        <li><a href="container-trading.html" onclick="closeMenu()">Container Trading & Leasing</a></li>
+                        <li><a href="container-domestication.html" onclick="closeMenu()">Container Domestication</a></li>
+                        <li><a href="freight-forwarding.html" onclick="closeMenu()">Freight Forwarding</a></li>
+                        <li><a href="transportation.html" onclick="closeMenu()">Transportation</a></li>
+                        <li><a href="customs-clearance.html" onclick="closeMenu()">Customs Clearance</a></li>
+                        <li><a href="vessel-operating.html" onclick="closeMenu()">Vessel Operating Agent</a></li>
+                        <li><a href="indian-spices-pulses.html" onclick="closeMenu()">Indian Spices & Pulses</a></li>
                     </ul>
                 </li>
-                <li><a href="index.html#agency">Agency Network</a></li>
-                <li><a href="index.html#contact">Contact Us</a></li>
+                <li><a href="index.html#agency" onclick="closeMenu()">Agency Network</a></li>
+                <li><a href="index.html#contact" onclick="closeMenu()">Contact Us</a></li>
             </ul>
         </div>
     </nav>
@@ -526,5 +653,40 @@
     <footer class="footer">
         <p>&copy; 2026 MMI Logitek Fzco. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+
+        function toggleDropdown(event) {
+            if (window.innerWidth <= 768) {
+                event.preventDefault();
+                event.currentTarget.classList.toggle('active');
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    </script>
 </body>
 </html>
