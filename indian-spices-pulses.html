@@ -212,6 +212,50 @@
             font-weight: 600;
         }
         
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .product-name {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-description {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
         .cta-section {
             padding: 4rem 2rem;
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
@@ -267,6 +311,10 @@
             .content-container h2 {
                 font-size: 1.5rem;
             }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -319,14 +367,45 @@
             </ul>
 
             <h3>Quality Pulses (Dal)</h3>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T08-16-28-662Z-1147c9d5-chat-image-1767341788644-0.jpg" alt="Rajma (Kidney Beans)" class="product-image">
+                    <div class="product-info">
+                        <h4 class="product-name">Rajma (Kidney Beans)</h4>
+                        <p class="product-description">Popular in North Indian dishes</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T08-16-28-953Z-7803b1b4-chat-image-1767341788935-1.jpg" alt="Urad Dal (Black Gram)" class="product-image">
+                    <div class="product-info">
+                        <h4 class="product-name">Urad Dal (Black Gram)</h4>
+                        <p class="product-description">Essential for South Indian cuisine</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T08-16-29-064Z-bd6d1dac-chat-image-1767341789045-2.jpg" alt="Chana Dal (Split Chickpeas)" class="product-image">
+                    <div class="product-info">
+                        <h4 class="product-name">Chana Dal (Split Chickpeas)</h4>
+                        <p class="product-description">Rich in protein and fiber</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T08-16-29-163Z-68eb87a7-chat-image-1767341789145-3.jpg" alt="Kabuli Chana (Chickpeas)" class="product-image">
+                    <div class="product-info">
+                        <h4 class="product-name">Kabuli Chana (Chickpeas)</h4>
+                        <p class="product-description">Versatile and protein-rich</p>
+                    </div>
+                </div>
+            </div>
+            
             <ul>
                 <li><strong>Toor Dal (Pigeon Peas)</strong> - Staple protein source</li>
                 <li><strong>Moong Dal (Green Gram)</strong> - Nutritious and easy to digest</li>
-                <li><strong>Chana Dal (Split Chickpeas)</strong> - Rich in protein and fiber</li>
                 <li><strong>Masoor Dal (Red Lentils)</strong> - Quick cooking and nutritious</li>
-                <li><strong>Urad Dal (Black Gram)</strong> - Essential for South Indian cuisine</li>
-                <li><strong>Rajma (Kidney Beans)</strong> - Popular in North Indian dishes</li>
-                <li><strong>Kabuli Chana (Chickpeas)</strong> - Versatile and protein-rich</li>
             </ul>
 
             <h2>Why Choose Our Products?</h2>
