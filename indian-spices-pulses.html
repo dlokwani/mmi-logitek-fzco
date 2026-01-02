@@ -198,6 +198,44 @@
             font-weight: 600;
         }
         
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .product-name {
+            font-size: 1.2rem;
+            color: #1e3c72;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
         .cta-section {
             padding: 4rem 2rem;
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
@@ -249,6 +287,10 @@
             .content-container h2 {
                 font-size: 1.5rem;
             }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -284,6 +326,16 @@
         <div class="content-container">
             <h2>Authentic Indian Products</h2>
             <p>At MMI Logitek Fzco, we take pride in sourcing and exporting the finest quality Indian spices and pulses to customers around the world. Our products are carefully selected from trusted suppliers across India, ensuring authenticity, freshness, and superior taste in every shipment.</p>
+
+            <h2>Indian Pulses</h2>
+            <div class="products-grid" id="pulses-grid">
+                <!-- Pulse products will be added here -->
+            </div>
+
+            <h2>Indian Spices</h2>
+            <div class="products-grid" id="spices-grid">
+                <!-- Spice products will be added here -->
+            </div>
 
             <h2>Why Choose Our Products?</h2>
             <ul>
