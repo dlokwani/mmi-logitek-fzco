@@ -204,6 +204,21 @@
             transform: scaleY(1);
         }
         
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #1e3c72;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
         .hero {
             margin-top: 90px;
             position: relative;
@@ -427,6 +442,54 @@
             font-size: 0.95rem;
         }
         
+        @media (max-width: 968px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 90px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 2rem 0;
+                max-height: calc(100vh - 90px);
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                display: none;
+                margin-top: 0.5rem;
+            }
+            
+            .dropdown-menu.active {
+                display: block;
+            }
+            
+            .dropdown > a::after {
+                content: ' ▼';
+                font-size: 0.7em;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
@@ -448,6 +511,11 @@
                         <h2>MMI Logitek</h2>
                     </div>
                 </a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
@@ -843,5 +911,33 @@
     <footer class="footer">
         <p>&copy; 2026 MMI Logitek Fzco. All rights reserved.</p>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const dropdowns = document.querySelectorAll('.dropdown > a');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
+                if (window.innerWidth <= 968) {
+                    e.preventDefault();
+                    const dropdownMenu = dropdown.nextElementSibling;
+                    dropdownMenu.classList.toggle('active');
+                }
+            });
+        });
+
+        document.querySelectorAll('.nav-menu a:not(.dropdown > a)').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
