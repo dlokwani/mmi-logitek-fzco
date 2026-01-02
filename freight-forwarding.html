@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freight Forwarding | MMI Logitek</title>
-    <meta name="description" content="Comprehensive freight forwarding services by air, sea, and land with MMI Logitek Fzco.">
+    <meta name="description" content="Comprehensive freight forwarding services for air, sea, and land cargo with global reach and local expertise.">
     <link rel="icon" type="image/png" href="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +34,7 @@
             background: rgba(255, 255, 255, 0.98);
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             z-index: 1000;
+            transition: all 0.3s ease;
         }
         
         .nav-container {
@@ -81,6 +82,10 @@
             align-items: center;
         }
         
+        .nav-menu li {
+            position: relative;
+        }
+        
         .nav-menu li a {
             color: #333;
             text-decoration: none;
@@ -89,6 +94,7 @@
             transition: all 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
+            display: block;
         }
         
         .nav-menu li a::after {
@@ -102,12 +108,100 @@
             transition: width 0.3s ease;
         }
         
-        .nav-menu li a:hover::after {
+        .nav-menu li a:hover::after,
+        .nav-menu li a.active::after {
             width: 100%;
         }
         
-        .nav-menu li a:hover {
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
             color: #ff6b35;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 280px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-radius: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            margin-top: 0.5rem;
+            padding: 0.5rem 0;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu li {
+            list-style: none;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideIn 0.3s ease forwards;
+        }
+        
+        .dropdown:hover .dropdown-menu li:nth-child(1) { animation-delay: 0.05s; }
+        .dropdown:hover .dropdown-menu li:nth-child(2) { animation-delay: 0.1s; }
+        .dropdown:hover .dropdown-menu li:nth-child(3) { animation-delay: 0.15s; }
+        .dropdown:hover .dropdown-menu li:nth-child(4) { animation-delay: 0.2s; }
+        .dropdown:hover .dropdown-menu li:nth-child(5) { animation-delay: 0.25s; }
+        .dropdown:hover .dropdown-menu li:nth-child(6) { animation-delay: 0.3s; }
+        .dropdown:hover .dropdown-menu li:nth-child(7) { animation-delay: 0.35s; }
+        .dropdown:hover .dropdown-menu li:nth-child(8) { animation-delay: 0.4s; }
+        
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .dropdown-menu li a {
+            padding: 0.8rem 1.5rem;
+            display: block;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dropdown-menu li a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown-menu li a::after {
+            display: none;
+        }
+        
+        .dropdown-menu li a:hover {
+            background: linear-gradient(90deg, rgba(255, 107, 53, 0.1) 0%, transparent 100%);
+            color: #ff6b35;
+            padding-left: 2rem;
+            transform: translateX(5px);
+        }
+        
+        .dropdown-menu li a:hover::before {
+            transform: scaleY(1);
         }
         
         .hero {
@@ -119,42 +213,38 @@
             overflow: hidden;
         }
         
-        .hero-image {
+        .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 1;
         }
         
-        .hero::before {
-            content: '';
+        .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.85) 100%);
-            z-index: 2;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.75) 100%);
         }
         
         .hero-content {
             position: relative;
-            z-index: 3;
+            z-index: 2;
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
             color: white;
-            text-align: center;
-            width: 100%;
         }
         
         .hero-title {
             font-size: 4rem;
             font-weight: 800;
             margin-bottom: 1rem;
+            line-height: 1.2;
         }
         
         .content-section {
@@ -167,23 +257,20 @@
             margin: 0 auto;
         }
         
-        .content-container h1 {
+        .content-container h2 {
             font-size: 2.5rem;
             color: #1e3c72;
             margin-bottom: 2rem;
             font-weight: 700;
         }
         
-        .content-container h2 {
-            font-size: 2rem;
-            color: #1e3c72;
-            margin: 3rem 0 1.5rem;
-            font-weight: 600;
+        .content-container h2 span {
+            color: #ff6b35;
         }
         
         .content-container h3 {
-            font-size: 1.5rem;
-            color: #2a5298;
+            font-size: 1.8rem;
+            color: #1e3c72;
             margin: 2rem 0 1rem;
             font-weight: 600;
         }
@@ -191,25 +278,39 @@
         .content-container p {
             color: #666;
             line-height: 1.9;
-            font-size: 1.1rem;
             margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
         
         .content-container ul {
-            margin: 1.5rem 0;
-            padding-left: 2rem;
+            list-style: none;
+            margin: 2rem 0;
         }
         
-        .content-container li {
+        .content-container ul li {
             color: #666;
             line-height: 1.9;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
             font-size: 1.1rem;
-            margin-bottom: 0.8rem;
         }
         
-        .content-container strong {
-            color: #1e3c72;
-            font-weight: 600;
+        .content-container ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .highlight-box {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #ff6b35;
+            margin: 2rem 0;
         }
         
         .contact-section {
@@ -314,12 +415,8 @@
                 font-size: 2.5rem;
             }
             
-            .content-container h1 {
-                font-size: 2rem;
-            }
-            
             .content-container h2 {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
         }
     </style>
@@ -338,7 +435,19 @@
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#services">Services</a></li>
+                <li class="dropdown">
+                    <a href="index.html#services">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="nvocc.html">NVOCC</a></li>
+                        <li><a href="container-trading.html">Container Trading & Leasing</a></li>
+                        <li><a href="container-domestication.html">Container Domestication</a></li>
+                        <li><a href="freight-forwarding.html">Freight Forwarding</a></li>
+                        <li><a href="transportation.html">Transportation</a></li>
+                        <li><a href="customs-clearance.html">Customs Clearance</a></li>
+                        <li><a href="vessel-operating.html">Vessel Operating Agent</a></li>
+                        <li><a href="indian-spices-pulses.html">Indian Spices & Pulses</a></li>
+                    </ul>
+                </li>
                 <li><a href="index.html#agency">Agency Network</a></li>
                 <li><a href="index.html#contact">Contact Us</a></li>
             </ul>
@@ -346,7 +455,8 @@
     </nav>
 
     <section class="hero">
-        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T13-50-00-469Z-b3fb2d85-chat-image-1767102600449-0.jpg" alt="Freight Forwarding" class="hero-image">
+        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-47-59-426Z-8a81e9bb-chat-image-1767098879407-3.jpg" alt="Freight Forwarding" class="hero-bg">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">Freight Forwarding</h1>
         </div>
@@ -354,38 +464,79 @@
 
     <section class="content-section">
         <div class="content-container">
-            <p>Freight forwarding involves the strategic coordination and shipment of goods from one destination to another using multiple modes of transportation —including air, sea, rail, and road. It is a critical function in global trade, ensuring goods move safely, efficiently, and cost-effectively across borders.</p>
+            <p>MMI Logitek Fzco provides comprehensive freight forwarding services designed to streamline your global supply chain. With expertise in air, sea, and land freight, we ensure your cargo reaches its destination safely, on time, and cost-effectively.</p>
+
+            <h2>Our Freight Forwarding <span>Services</span></h2>
             
-            <p>At MMI Logitek Fzco, we act as trusted freight forwarding agents, working on behalf of importers, exporters, and commercial businesses to streamline the transportation process from origin to destination.</p>
-
-            <h2>Our Freight Forwarding Expertise</h2>
-            <p>With over 5 years of dedicated experience in freight forwarding, MMI Logitek Fzco has successfully handled a wide range of cargo across multiple sectors and geographies. Our team ensures:</p>
+            <h3>Sea Freight Forwarding</h3>
+            <p>We offer flexible ocean freight solutions for all types of cargo:</p>
             <ul>
-                <li>Proper planning and documentation</li>
-                <li>Selection of the most suitable and economical routes</li>
-                <li>Coordination with reliable carriers and customs authorities</li>
-                <li>Full transparency and cargo tracking throughout the journey</li>
+                <li>Full Container Load (FCL) shipments</li>
+                <li>Less than Container Load (LCL) consolidation</li>
+                <li>Break bulk and project cargo</li>
+                <li>Reefer (temperature-controlled) cargo</li>
+                <li>Hazardous materials handling</li>
+                <li>Door-to-door and port-to-port services</li>
             </ul>
 
-            <h3>What We Offer</h3>
+            <h3>Air Freight Forwarding</h3>
+            <p>Fast and reliable air cargo services for time-sensitive shipments:</p>
             <ul>
-                <li><strong>Multimodal Transportation</strong> via air, sea, rail, and road</li>
-                <li><strong>Competitive Freight Rates</strong> - We guarantee market-leading rates across all major sectors</li>
-                <li><strong>Customized Logistics Solutions</strong> based on your shipment size, type, and destination</li>
-                <li><strong>Global Coverage</strong> - Strong presence across USA, UAE, China, Southeast Asia, and more</li>
-                <li><strong>End-to-End Support</strong> from booking and clearance to delivery and documentation</li>
+                <li>Express and standard air freight</li>
+                <li>Consolidated and direct flights</li>
+                <li>Charter services for oversized cargo</li>
+                <li>Temperature-sensitive pharmaceutical shipments</li>
+                <li>Dangerous goods certification and handling</li>
+                <li>Airport-to-airport and door-to-door delivery</li>
             </ul>
 
-            <h2>Why Choose Our Services?</h2>
+            <h3>Land Freight Forwarding</h3>
+            <p>Efficient ground transportation across borders:</p>
             <ul>
-                <li>Experienced Freight Forwarders with a global network</li>
-                <li>Personalized attention to your logistics needs</li>
-                <li>Reliable handling of FCL, LCL, breakbulk, hazardous, and special cargo</li>
-                <li>Strong relationships with global carriers and feeder operators</li>
-                <li>Commitment to timely and safe deliveries</li>
+                <li>Full Truck Load (FTL) and Less than Truck Load (LTL)</li>
+                <li>Cross-border trucking services</li>
+                <li>Intermodal transportation solutions</li>
+                <li>Last-mile delivery coordination</li>
+                <li>Specialized vehicle arrangements</li>
             </ul>
 
-            <p>At MMI Logitek Fzco, we don't just move cargo —we move your business forward. No matter the size, type, or destination of your shipment, we are here to deliver excellence, reliability, and value.</p>
+            <h2>Value-Added <span>Services</span></h2>
+            <ul>
+                <li>Cargo insurance and risk management</li>
+                <li>Warehousing and distribution</li>
+                <li>Customs brokerage and documentation</li>
+                <li>Packaging and crating services</li>
+                <li>Real-time shipment tracking</li>
+                <li>Supply chain consulting</li>
+                <li>Trade compliance advisory</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Why Choose Our Freight Forwarding Services</h3>
+                <ul>
+                    <li>Global network of trusted partners and agents</li>
+                    <li>Competitive rates with major carriers</li>
+                    <li>24/7 customer support and shipment visibility</li>
+                    <li>Expert handling of complex logistics requirements</li>
+                    <li>Flexible solutions tailored to your business needs</li>
+                    <li>Single point of contact for all your shipping needs</li>
+                    <li>Proven track record of on-time deliveries</li>
+                </ul>
+            </div>
+
+            <h2>Industries We <span>Serve</span></h2>
+            <ul>
+                <li>Manufacturing and industrial equipment</li>
+                <li>Retail and e-commerce</li>
+                <li>Automotive and spare parts</li>
+                <li>Pharmaceuticals and healthcare</li>
+                <li>Food and beverage</li>
+                <li>Technology and electronics</li>
+                <li>Fashion and textiles</li>
+                <li>Oil and gas</li>
+            </ul>
+
+            <p>At MMI Logitek Fzco, we understand that every shipment is unique. Our experienced team works closely with you to design customized freight forwarding solutions that optimize costs, reduce transit times, and ensure compliance with international trade regulations.</p>
         </div>
     </section>
 
