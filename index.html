@@ -50,6 +50,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            z-index: 1001;
         }
         
         .logo-link {
@@ -73,6 +74,40 @@
             font-size: 1.5rem;
             color: #1e3c72;
             font-weight: 700;
+        }
+        
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+        }
+        
+        .hamburger-menu input {
+            display: none;
+        }
+        
+        .hamburger-line {
+            width: 28px;
+            height: 3px;
+            background: #1e3c72;
+            margin: 3px 0;
+            transition: 0.4s;
+            border-radius: 3px;
+        }
+        
+        .hamburger-menu input:checked ~ .hamburger-line:nth-of-type(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-menu input:checked ~ .hamburger-line:nth-of-type(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+        
+        .hamburger-menu input:checked ~ .hamburger-line:nth-of-type(4) {
+            transform: rotate(45deg) translate(7px, 7px);
         }
         
         .nav-menu {
@@ -560,6 +595,7 @@
             opacity: 0.8;
         }
         
+        /* Tablet Responsive */
         @media (max-width: 968px) {
             .trusted-container {
                 grid-template-columns: 1fr;
@@ -576,37 +612,180 @@
             }
         }
         
+        /* Mobile Responsive */
         @media (max-width: 768px) {
+            .nav-container {
+                padding: 0.8rem 1.5rem;
+            }
+            
+            .logo-img {
+                height: 45px;
+            }
+            
+            .logo-text h2 {
+                font-size: 1.2rem;
+            }
+            
+            /* Show hamburger menu on mobile */
+            .hamburger-menu {
+                display: flex;
+            }
+            
+            /* Hide desktop menu, show mobile menu */
+            .nav-menu {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: white;
+                width: 280px;
+                height: calc(100vh - 70px);
+                text-align: left;
+                transition: 0.4s ease-in-out;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                gap: 0;
+                padding: 2rem 0;
+                overflow-y: auto;
+            }
+            
+            .hamburger-menu input:checked ~ .nav-menu {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0;
+                width: 100%;
+            }
+            
+            .nav-menu li a {
+                padding: 1rem 1.5rem;
+                display: block;
+                font-size: 1.05rem;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .nav-menu li a::after {
+                display: none;
+            }
+            
+            /* Mobile dropdown styles */
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: #f8f9fa;
+                margin-top: 0;
+                border-radius: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+            
+            .dropdown:hover .dropdown-menu,
+            .dropdown:focus-within .dropdown-menu {
+                max-height: 500px;
+            }
+            
+            .dropdown-menu li {
+                opacity: 1;
+                transform: none;
+                animation: none;
+            }
+            
+            .dropdown-menu li a {
+                padding: 0.8rem 2rem;
+                font-size: 0.95rem;
+            }
+            
+            .dropdown-menu li a:hover {
+                padding-left: 2.5rem;
+            }
+            
+            /* Hero section mobile */
             .hero {
                 height: 40vh;
+                margin-top: 70px;
             }
             
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+            }
+            
+            /* Sections mobile */
+            .section {
+                padding: 4rem 1.5rem;
             }
             
             .section-title {
                 font-size: 2rem;
             }
             
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .trusted-section {
+                padding: 4rem 1.5rem;
+            }
+            
             .trusted-content h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            
+            .trusted-content p {
+                font-size: 1rem;
+            }
+            
+            .stats-section {
+                padding: 3rem 1.5rem;
             }
             
             .stat-number {
-                font-size: 3rem;
+                font-size: 2.5rem;
+            }
+            
+            .stat-label {
+                font-size: 1rem;
             }
             
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
             
             .stats-container {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .contact-header h2 {
+                font-size: 2rem;
+            }
+            
+            .agency-section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .agency-section .section-title {
+                font-size: 2rem;
+            }
+            
+            .agency-section .section-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .agency-description {
+                font-size: 1rem;
             }
         }
     </style>
@@ -622,6 +801,12 @@
                     </div>
                 </a>
             </div>
+            <label class="hamburger-menu">
+                <input type="checkbox" id="menu-toggle">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </label>
             <ul class="nav-menu">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
