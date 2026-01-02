@@ -83,31 +83,29 @@
             cursor: pointer;
             z-index: 1001;
             position: relative;
-        }
-        
-        .hamburger-menu input {
-            display: none;
+            width: 30px;
+            height: 24px;
+            justify-content: space-between;
         }
         
         .hamburger-line {
-            width: 28px;
+            width: 100%;
             height: 3px;
             background: #1e3c72;
-            margin: 3px 0;
             transition: 0.4s;
             border-radius: 3px;
         }
         
-        .hamburger-menu input:checked ~ .hamburger-line:nth-of-type(2) {
+        .hamburger-menu.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(2) {
             opacity: 0;
         }
         
-        .hamburger-menu input:checked ~ .hamburger-line:nth-of-type(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-        
-        .hamburger-menu input:checked ~ .hamburger-line:nth-of-type(4) {
-            transform: rotate(45deg) translate(7px, 7px);
+        .hamburger-menu.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
         }
         
         .nav-menu {
@@ -648,7 +646,7 @@
                 overflow-y: auto;
             }
             
-            .hamburger-menu input:checked ~ .nav-menu {
+            .nav-menu.active {
                 right: 0;
             }
             
@@ -683,8 +681,7 @@
                 transition: max-height 0.3s ease;
             }
             
-            .dropdown:hover .dropdown-menu,
-            .dropdown:focus-within .dropdown-menu {
+            .dropdown.active .dropdown-menu {
                 max-height: 500px;
             }
             
@@ -801,30 +798,29 @@
                     </div>
                 </a>
             </div>
-            <label class="hamburger-menu">
-                <input type="checkbox" id="menu-toggle">
+            <div class="hamburger-menu" onclick="toggleMenu()">
                 <div class="hamburger-line"></div>
                 <div class="hamburger-line"></div>
                 <div class="hamburger-line"></div>
-            </label>
+            </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li class="dropdown">
+                <li><a href="#home" class="active" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li class="dropdown" onclick="toggleDropdown(event)">
                     <a href="#services">Services</a>
                     <ul class="dropdown-menu">
-                        <li><a href="nvocc.html">NVOCC</a></li>
-                        <li><a href="container-trading.html">Container Trading & Leasing</a></li>
-                        <li><a href="container-domestication.html">Container Domestication</a></li>
-                        <li><a href="freight-forwarding.html">Freight Forwarding</a></li>
-                        <li><a href="transportation.html">Transportation</a></li>
-                        <li><a href="customs-clearance.html">Customs Clearance</a></li>
-                        <li><a href="vessel-operating.html">Vessel Operating Agent</a></li>
-                        <li><a href="indian-spices-pulses.html">Indian Spices & Pulses</a></li>
+                        <li><a href="nvocc.html" onclick="closeMenu()">NVOCC</a></li>
+                        <li><a href="container-trading.html" onclick="closeMenu()">Container Trading & Leasing</a></li>
+                        <li><a href="container-domestication.html" onclick="closeMenu()">Container Domestication</a></li>
+                        <li><a href="freight-forwarding.html" onclick="closeMenu()">Freight Forwarding</a></li>
+                        <li><a href="transportation.html" onclick="closeMenu()">Transportation</a></li>
+                        <li><a href="customs-clearance.html" onclick="closeMenu()">Customs Clearance</a></li>
+                        <li><a href="vessel-operating.html" onclick="closeMenu()">Vessel Operating Agent</a></li>
+                        <li><a href="indian-spices-pulses.html" onclick="closeMenu()">Indian Spices & Pulses</a></li>
                     </ul>
                 </li>
-                <li><a href="#agency">Agency Network</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#agency" onclick="closeMenu()">Agency Network</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact Us</a></li>
             </ul>
         </div>
     </nav>
@@ -997,5 +993,40 @@
     <footer class="footer">
         <p>&copy; 2026 MMI Logitek Fzco. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+
+        function toggleDropdown(event) {
+            if (window.innerWidth <= 768) {
+                event.preventDefault();
+                event.currentTarget.classList.toggle('active');
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    </script>
 </body>
 </html>
