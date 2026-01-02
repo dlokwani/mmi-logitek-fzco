@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vessel Operating Agent | MMI Logitek</title>
-    <meta name="description" content="Professional vessel operating agent services for shipping lines and vessel owners.">
+    <meta name="description" content="Professional vessel operating agent services for shipping lines with comprehensive port operations and husbandry support.">
     <link rel="icon" type="image/png" href="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2025-12-30T12-52-51-510Z-f9d53e17-chat-image-1767099171492-0.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,6 +50,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            z-index: 1001;
         }
         
         .logo-link {
@@ -73,6 +74,38 @@
             font-size: 1.5rem;
             color: #1e3c72;
             font-weight: 700;
+        }
+        
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+            width: 30px;
+            height: 24px;
+            justify-content: space-between;
+        }
+        
+        .hamburger-line {
+            width: 100%;
+            height: 3px;
+            background: #1e3c72;
+            transition: 0.4s;
+            border-radius: 3px;
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
         }
         
         .nav-menu {
@@ -410,7 +443,96 @@
             font-size: 0.95rem;
         }
         
+        /* Mobile Responsive */
         @media (max-width: 768px) {
+            .nav-container {
+                padding: 0.8rem 1.5rem;
+            }
+            
+            .logo-img {
+                height: 45px;
+            }
+            
+            .logo-text h2 {
+                font-size: 1.2rem;
+            }
+            
+            /* Show hamburger menu on mobile */
+            .hamburger-menu {
+                display: flex;
+            }
+            
+            /* Hide desktop menu, show mobile menu */
+            .nav-menu {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: white;
+                width: 280px;
+                height: calc(100vh - 70px);
+                text-align: left;
+                transition: 0.4s ease-in-out;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                gap: 0;
+                padding: 2rem 0;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0;
+                width: 100%;
+            }
+            
+            .nav-menu li a {
+                padding: 1rem 1.5rem;
+                display: block;
+                font-size: 1.05rem;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .nav-menu li a::after {
+                display: none;
+            }
+            
+            /* Mobile dropdown styles */
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: #f8f9fa;
+                margin-top: 0;
+                border-radius: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                max-height: 500px;
+            }
+            
+            .dropdown-menu li {
+                opacity: 1;
+                transform: none;
+                animation: none;
+            }
+            
+            .dropdown-menu li a {
+                padding: 0.8rem 2rem;
+                font-size: 0.95rem;
+            }
+            
+            .dropdown-menu li a:hover {
+                padding-left: 2.5rem;
+            }
+            
             .hero-title {
                 font-size: 2.5rem;
             }
@@ -432,24 +554,29 @@
                     </div>
                 </a>
             </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li class="dropdown">
+                <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+                <li><a href="index.html#about" onclick="closeMenu()">About</a></li>
+                <li class="dropdown" onclick="toggleDropdown(event)">
                     <a href="index.html#services">Services</a>
                     <ul class="dropdown-menu">
-                        <li><a href="nvocc.html">NVOCC</a></li>
-                        <li><a href="container-trading.html">Container Trading & Leasing</a></li>
-                        <li><a href="container-domestication.html">Container Domestication</a></li>
-                        <li><a href="freight-forwarding.html">Freight Forwarding</a></li>
-                        <li><a href="transportation.html">Transportation</a></li>
-                        <li><a href="customs-clearance.html">Customs Clearance</a></li>
-                        <li><a href="vessel-operating.html">Vessel Operating Agent</a></li>
-                        <li><a href="indian-spices-pulses.html">Indian Spices & Pulses</a></li>
+                        <li><a href="nvocc.html" onclick="closeMenu()">NVOCC</a></li>
+                        <li><a href="container-trading.html" onclick="closeMenu()">Container Trading & Leasing</a></li>
+                        <li><a href="container-domestication.html" onclick="closeMenu()">Container Domestication</a></li>
+                        <li><a href="freight-forwarding.html" onclick="closeMenu()">Freight Forwarding</a></li>
+                        <li><a href="transportation.html" onclick="closeMenu()">Transportation</a></li>
+                        <li><a href="customs-clearance.html" onclick="closeMenu()">Customs Clearance</a></li>
+                        <li><a href="vessel-operating.html" onclick="closeMenu()">Vessel Operating Agent</a></li>
+                        <li><a href="indian-spices-pulses.html" onclick="closeMenu()">Indian Spices & Pulses</a></li>
                     </ul>
                 </li>
-                <li><a href="index.html#agency">Agency Network</a></li>
-                <li><a href="index.html#contact">Contact Us</a></li>
+                <li><a href="index.html#agency" onclick="closeMenu()">Agency Network</a></li>
+                <li><a href="index.html#contact" onclick="closeMenu()">Contact Us</a></li>
             </ul>
         </div>
     </nav>
@@ -501,81 +628,34 @@
                 <li>Spare parts procurement</li>
                 <li>Technical services coordination</li>
                 <li>Waste disposal arrangements</li>
-                <li>Ship chandling services</li>
-            </ul>
-
-            <h3>Crew Services</h3>
-            <p>Comprehensive crew support:</p>
-            <ul>
-                <li>Crew change arrangements</li>
-                <li>Airport transfers</li>
-                <li>Hotel accommodations</li>
-                <li>Medical services coordination</li>
-                <li>Shore leave arrangements</li>
-                <li>Cash to master services</li>
-                <li>Visa and immigration assistance</li>
-            </ul>
-
-            <h2>Financial & Administrative <span>Services</span></h2>
-            <ul>
-                <li>Port disbursement accounts (PDA)</li>
-                <li>Statement of facts (SOF) preparation</li>
-                <li>Time sheet management</li>
-                <li>Invoice processing and payment</li>
-                <li>Financial reporting</li>
-                <li>Currency exchange services</li>
-                <li>Freight collection</li>
-            </ul>
-
-            <h3>Documentation Services</h3>
-            <p>Complete maritime documentation support:</p>
-            <ul>
-                <li>Bill of lading issuance</li>
-                <li>Cargo manifests</li>
-                <li>Port clearance documents</li>
-                <li>Customs declarations</li>
-                <li>Certificate of registry</li>
-                <li>Crew lists and effects</li>
-                <li>Health and safety certificates</li>
+                <li>Medical services and repatriation</li>
             </ul>
 
             <div class="highlight-box">
-                <h3>Why Choose Our Vessel Agency Services</h3>
+                <h3>Why Choose Our Vessel Agency Services?</h3>
                 <ul>
                     <li>24/7 operational support and emergency response</li>
                     <li>Experienced maritime professionals</li>
                     <li>Strong relationships with port authorities</li>
                     <li>Efficient turnaround time management</li>
                     <li>Transparent cost management and reporting</li>
+                    <li>Comprehensive insurance and P&I club coordination</li>
                     <li>Multi-port coverage across the region</li>
-                    <li>Compliance with international maritime standards</li>
-                    <li>Dedicated operations team for each vessel</li>
                 </ul>
             </div>
 
-            <h2>Specialized <span>Services</span></h2>
+            <h2>Additional <span>Services</span></h2>
             <ul>
-                <li>Container vessel operations</li>
-                <li>Bulk carrier agency</li>
-                <li>Tanker operations</li>
-                <li>Ro-Ro vessel handling</li>
-                <li>Project cargo vessels</li>
-                <li>Cruise ship agency</li>
-                <li>Offshore support vessels</li>
-                <li>Naval vessel services</li>
+                <li>Ship-to-ship transfer operations</li>
+                <li>Offshore supply vessel support</li>
+                <li>Crew change and travel arrangements</li>
+                <li>Cash to master services</li>
+                <li>Incident and casualty management</li>
+                <li>Port disbursement account management</li>
+                <li>Regulatory compliance and reporting</li>
             </ul>
 
-            <h2>Port Coverage & <span>Network</span></h2>
-            <p>We provide vessel agency services at major ports across the region, including:</p>
-            <ul>
-                <li>UAE ports (Jebel Ali, Port Rashid, Khalifa Port, etc.)</li>
-                <li>GCC regional ports</li>
-                <li>Indian subcontinent ports</li>
-                <li>East African ports</li>
-                <li>Red Sea ports</li>
-            </ul>
-
-            <p>At MMI Logitek Fzco, we understand that efficient vessel operations are critical to your shipping business. Our experienced team provides reliable, professional, and cost-effective vessel agency services, ensuring smooth port calls and optimal vessel performance.</p>
+            <p>As your trusted vessel operating agent, MMI Logitek Fzco ensures your vessels receive professional, efficient, and cost-effective support at every port call, allowing you to focus on your core shipping operations.</p>
         </div>
     </section>
 
@@ -620,5 +700,40 @@
     <footer class="footer">
         <p>&copy; 2026 MMI Logitek Fzco. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+
+        function toggleDropdown(event) {
+            if (window.innerWidth <= 768) {
+                event.preventDefault();
+                event.currentTarget.classList.toggle('active');
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    </script>
 </body>
 </html>
