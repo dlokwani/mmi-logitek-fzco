@@ -50,6 +50,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            z-index: 1001;
         }
         
         .logo-link {
@@ -73,6 +74,38 @@
             font-size: 1.5rem;
             color: #1e3c72;
             font-weight: 700;
+        }
+        
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+            width: 30px;
+            height: 24px;
+            justify-content: space-between;
+        }
+        
+        .hamburger-line {
+            width: 100%;
+            height: 3px;
+            background: #1e3c72;
+            transition: 0.4s;
+            border-radius: 3px;
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
         }
         
         .nav-menu {
@@ -202,21 +235,6 @@
         
         .dropdown-menu li a:hover::before {
             transform: scaleY(1);
-        }
-        
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            z-index: 1001;
-        }
-        
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #1e3c72;
-            margin: 3px 0;
-            transition: 0.3s;
         }
         
         .hero {
@@ -442,55 +460,99 @@
             font-size: 0.95rem;
         }
         
-        @media (max-width: 968px) {
-            .hamburger {
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0.8rem 1.5rem;
+            }
+            
+            .logo-img {
+                height: 45px;
+            }
+            
+            .logo-text h2 {
+                font-size: 1.2rem;
+            }
+            
+            /* Show hamburger menu on mobile */
+            .hamburger-menu {
                 display: flex;
             }
             
+            /* Hide desktop menu, show mobile menu */
             .nav-menu {
                 position: fixed;
-                left: -100%;
-                top: 90px;
+                right: -100%;
+                top: 70px;
                 flex-direction: column;
-                background: white;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                background-color: white;
+                width: 280px;
+                height: calc(100vh - 70px);
+                text-align: left;
+                transition: 0.4s ease-in-out;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                gap: 0;
                 padding: 2rem 0;
-                max-height: calc(100vh - 90px);
                 overflow-y: auto;
             }
             
             .nav-menu.active {
-                left: 0;
+                right: 0;
             }
             
             .nav-menu li {
-                margin: 1rem 0;
+                margin: 0;
+                width: 100%;
             }
             
+            .nav-menu li a {
+                padding: 1rem 1.5rem;
+                display: block;
+                font-size: 1.05rem;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .nav-menu li a::after {
+                display: none;
+            }
+            
+            /* Mobile dropdown styles */
             .dropdown-menu {
                 position: static;
                 opacity: 1;
                 visibility: visible;
                 transform: none;
                 box-shadow: none;
-                display: none;
-                margin-top: 0.5rem;
+                background: #f8f9fa;
+                margin-top: 0;
+                border-radius: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                pointer-events: auto;
             }
             
-            .dropdown-menu.active {
-                display: block;
+            .dropdown.active .dropdown-menu {
+                max-height: 500px;
             }
             
-            .dropdown > a::after {
-                content: ' ▼';
-                font-size: 0.7em;
+            .dropdown-menu li {
+                opacity: 1;
+                transform: none;
+                animation: none;
             }
-        }
-        
-        @media (max-width: 768px) {
+            
+            .dropdown-menu li a {
+                padding: 0.8rem 2rem;
+                font-size: 0.95rem;
+                pointer-events: auto;
+                cursor: pointer;
+            }
+            
+            .dropdown-menu li a:hover {
+                padding-left: 2.5rem;
+            }
+            
             .hero-title {
                 font-size: 2.5rem;
             }
@@ -512,15 +574,15 @@
                     </div>
                 </a>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li class="dropdown">
+                <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+                <li><a href="index.html#about" onclick="closeMenu()">About</a></li>
+                <li class="dropdown" onclick="toggleDropdown(event)">
                     <a href="index.html#services">Services</a>
                     <ul class="dropdown-menu">
                         <li><a href="nvocc.html">NVOCC</a></li>
@@ -533,8 +595,8 @@
                         <li><a href="indian-spices-pulses.html">Indian Spices & Pulses</a></li>
                     </ul>
                 </li>
-                <li><a href="index.html#agency">Agency Network</a></li>
-                <li><a href="index.html#contact">Contact Us</a></li>
+                <li><a href="index.html#agency" onclick="closeMenu()">Agency Network</a></li>
+                <li><a href="index.html#contact" onclick="closeMenu()">Contact Us</a></li>
             </ul>
         </div>
     </nav>
@@ -913,30 +975,41 @@
     </footer>
 
     <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        const dropdowns = document.querySelectorAll('.dropdown > a');
-
-        hamburger.addEventListener('click', () => {
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
-        });
+        }
 
-        dropdowns.forEach(dropdown => {
-            dropdown.addEventListener('click', (e) => {
-                if (window.innerWidth <= 968) {
-                    e.preventDefault();
-                    const dropdownMenu = dropdown.nextElementSibling;
-                    dropdownMenu.classList.toggle('active');
-                }
-            });
-        });
+        function closeMenu() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
 
-        document.querySelectorAll('.nav-menu a:not(.dropdown > a)').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
+        function toggleDropdown(event) {
+            // Only prevent default on the parent Services link, not on dropdown items
+            const target = event.target;
+            const isDropdownParent = target.closest('.dropdown') && !target.closest('.dropdown-menu');
+            
+            if (window.innerWidth <= 768 && isDropdownParent) {
+                event.preventDefault();
+                event.currentTarget.classList.toggle('active');
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
         });
     </script>
 </body>
