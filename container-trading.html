@@ -510,6 +510,7 @@
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease;
+                pointer-events: auto;
             }
             
             .dropdown.active .dropdown-menu {
@@ -525,6 +526,8 @@
             .dropdown-menu li a {
                 padding: 0.8rem 2rem;
                 font-size: 0.95rem;
+                pointer-events: auto;
+                cursor: pointer;
             }
             
             .dropdown-menu li a:hover {
@@ -563,14 +566,14 @@
                 <li class="dropdown" onclick="toggleDropdown(event)">
                     <a href="index.html#services">Services</a>
                     <ul class="dropdown-menu">
-                        <li><a href="nvocc.html" onclick="closeMenu()">NVOCC</a></li>
-                        <li><a href="container-trading.html" onclick="closeMenu()">Container Trading & Leasing</a></li>
-                        <li><a href="container-domestication.html" onclick="closeMenu()">Container Domestication</a></li>
-                        <li><a href="freight-forwarding.html" onclick="closeMenu()">Freight Forwarding</a></li>
-                        <li><a href="transportation.html" onclick="closeMenu()">Transportation</a></li>
-                        <li><a href="customs-clearance.html" onclick="closeMenu()">Customs Clearance</a></li>
-                        <li><a href="vessel-operating.html" onclick="closeMenu()">Vessel Operating Agent</a></li>
-                        <li><a href="indian-spices-pulses.html" onclick="closeMenu()">Indian Spices & Pulses</a></li>
+                        <li><a href="nvocc.html">NVOCC</a></li>
+                        <li><a href="container-trading.html">Container Trading & Leasing</a></li>
+                        <li><a href="container-domestication.html">Container Domestication</a></li>
+                        <li><a href="freight-forwarding.html">Freight Forwarding</a></li>
+                        <li><a href="transportation.html">Transportation</a></li>
+                        <li><a href="customs-clearance.html">Customs Clearance</a></li>
+                        <li><a href="vessel-operating.html">Vessel Operating Agent</a></li>
+                        <li><a href="indian-spices-pulses.html">Indian Spices & Pulses</a></li>
                     </ul>
                 </li>
                 <li><a href="index.html#agency" onclick="closeMenu()">Agency Network</a></li>
@@ -702,7 +705,11 @@
         }
 
         function toggleDropdown(event) {
-            if (window.innerWidth <= 768) {
+            // Only prevent default on the parent Services link, not on dropdown items
+            const target = event.target;
+            const isDropdownParent = target.closest('.dropdown') && !target.closest('.dropdown-menu');
+            
+            if (window.innerWidth <= 768 && isDropdownParent) {
                 event.preventDefault();
                 event.currentTarget.classList.toggle('active');
             }
