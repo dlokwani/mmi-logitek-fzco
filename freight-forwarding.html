@@ -365,6 +365,7 @@
             height: 60vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
         
@@ -375,6 +376,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            z-index: 1;
         }
         
         .hero-overlay {
@@ -383,23 +385,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.75) 100%);
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.85) 100%);
+            z-index: 2;
         }
         
         .hero-content {
             position: relative;
-            z-index: 2;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            z-index: 3;
+            text-align: center;
             color: white;
+            max-width: 1200px;
+            padding: 0 2rem;
         }
         
         .hero-title {
             font-size: 4rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .content-section {
@@ -412,10 +415,17 @@
             margin: 0 auto;
         }
         
+        .content-container p {
+            color: #666;
+            line-height: 1.9;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
         .content-container h2 {
             font-size: 2.5rem;
             color: #1e3c72;
-            margin-bottom: 2rem;
+            margin: 3rem 0 1.5rem;
             font-weight: 700;
         }
         
@@ -425,47 +435,125 @@
         
         .content-container h3 {
             font-size: 1.8rem;
-            color: #1e3c72;
-            margin: 2rem 0 1rem;
+            color: #2a5298;
+            margin: 2.5rem 0 1.5rem;
             font-weight: 600;
         }
         
-        .content-container p {
-            color: #666;
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-        
         .content-container ul {
-            list-style: none;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
+            padding-left: 2rem;
         }
         
-        .content-container ul li {
+        .content-container li {
             color: #666;
             line-height: 1.9;
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
             font-size: 1.1rem;
+            margin-bottom: 0.8rem;
         }
         
-        .content-container ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
+        .content-container strong {
+            color: #1e3c72;
+            font-weight: 600;
+        }
+        
+        /* Features Grid Section */
+        .features-section {
+            background: #f8f9fa;
+            padding: 5rem 2rem;
+        }
+        
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .features-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .features-header h2 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .features-header h2 span {
             color: #ff6b35;
-            font-weight: bold;
-            font-size: 1.3rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1rem;
         }
         
         .highlight-box {
-            background: #f8f9fa;
-            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2.5rem;
             border-radius: 15px;
-            border-left: 4px solid #ff6b35;
-            margin: 2rem 0;
+            margin: 3rem 0;
+            border-left: 5px solid #ff6b35;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .highlight-box h3 {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .highlight-box ul {
+            margin: 0;
+            padding-left: 2rem;
+        }
+        
+        .highlight-box li {
+            margin-bottom: 1rem;
+            color: #555;
         }
         
         .contact-section {
@@ -665,6 +753,10 @@
             .content-container h2 {
                 font-size: 2rem;
             }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -716,67 +808,70 @@
 
     <section class="content-section">
         <div class="content-container">
-            <p>MMI Logitek Fzco provides comprehensive freight forwarding services designed to streamline your global supply chain. With expertise in air, sea, and land freight, we ensure your cargo reaches its destination safely, on time, and cost-effectively.</p>
-
-            <h2>Our Freight Forwarding <span>Services</span></h2>
+            <p>Freight forwarding involves the strategic coordination and shipment of goods from one destination to another using multiple modes of transportation —including air, sea, rail, and road. It is a critical function in global trade, ensuring goods move safely, efficiently, and cost-effectively across borders.</p>
             
-            <h3>Sea Freight Forwarding</h3>
-            <p>We offer flexible ocean freight solutions for all types of cargo:</p>
-            <ul>
-                <li>Full Container Load (FCL) shipments</li>
-                <li>Less than Container Load (LCL) consolidation</li>
-                <li>Break bulk and project cargo</li>
-                <li>Reefer (temperature-controlled) cargo</li>
-                <li>Hazardous materials handling</li>
-                <li>Door-to-door and port-to-port services</li>
-            </ul>
+            <p>At MMI Logitek, we act as trusted freight forwarding agents, working on behalf of importers, exporters, and commercial businesses to streamline the transportation process from origin to destination.</p>
 
-            <h3>Air Freight Forwarding</h3>
-            <p>Fast and reliable air cargo services for time-sensitive shipments:</p>
+            <h2>Our Freight Forwarding <span>Expertise</span></h2>
+            <p>With over 5 years of dedicated experience in freight forwarding, MMI Logitek has successfully handled a wide range of cargo across multiple sectors and geographies. Our team ensures:</p>
             <ul>
-                <li>Express and standard air freight</li>
-                <li>Consolidated and direct flights</li>
-                <li>Charter services for oversized cargo</li>
-                <li>Temperature-sensitive pharmaceutical shipments</li>
-                <li>Dangerous goods certification and handling</li>
-                <li>Airport-to-airport and door-to-door delivery</li>
+                <li>Proper planning and documentation</li>
+                <li>Selection of the most suitable and economical routes</li>
+                <li>Coordination with reliable carriers and customs authorities</li>
+                <li>Full transparency and cargo tracking throughout the journey</li>
             </ul>
+        </div>
+    </section>
 
-            <h3>Land Freight Forwarding</h3>
-            <p>Efficient ground transportation across borders:</p>
-            <ul>
-                <li>Full Truck Load (FTL) and Less than Truck Load (LTL)</li>
-                <li>Cross-border trucking services</li>
-                <li>Intermodal transportation solutions</li>
-                <li>Last-mile delivery coordination</li>
-                <li>Specialized vehicle arrangements</li>
-                <li>Real-time tracking and monitoring</li>
-            </ul>
+    <section class="features-section">
+        <div class="features-container">
+            <div class="features-header">
+                <h2>What We <span>Offer</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚢</div>
+                    <h3>Multimodal Transportation</h3>
+                    <p>via air, sea, rail, and road</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Competitive Freight Rates</h3>
+                    <p>We guarantee market-leading rates across all major sectors</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Customized Logistics Solutions</h3>
+                    <p>Based on your shipment size, type, and destination</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global Coverage</h3>
+                    <p>Strong presence across USA, UAE, China, Southeast Asia, and more</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>End-to-End Support</h3>
+                    <p>From booking and clearance to delivery and documentation</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="content-section" style="padding-top: 3rem;">
+        <div class="content-container">
             <div class="highlight-box">
-                <h3>Why Choose Our Freight Forwarding Services?</h3>
+                <h3>Why Choose Our Services?</h3>
                 <ul>
-                    <li>Global network of trusted partners and carriers</li>
-                    <li>Competitive rates through volume discounts</li>
-                    <li>Single point of contact for multimodal shipments</li>
-                    <li>Advanced cargo tracking and visibility</li>
-                    <li>Customs clearance and documentation support</li>
-                    <li>Insurance and risk management solutions</li>
-                    <li>24/7 customer support and emergency assistance</li>
+                    <li>Experienced Freight Forwarders with a global network</li>
+                    <li>Personalized attention to your logistics needs</li>
+                    <li>Reliable handling of FCL, LCL, breakbulk, hazardous, and special cargo</li>
+                    <li>Strong relationships with global carriers and feeder operators</li>
+                    <li>Commitment to timely and safe deliveries</li>
                 </ul>
             </div>
 
-            <h2>Value-Added <span>Services</span></h2>
-            <ul>
-                <li>Cargo insurance and claims management</li>
-                <li>Warehousing and distribution</li>
-                <li>Packaging and crating services</li>
-                <li>Supply chain consulting and optimization</li>
-                <li>Trade compliance and regulatory guidance</li>
-                <li>Real-time shipment tracking and reporting</li>
-            </ul>
-
-            <p>Whether you're shipping a single pallet or managing complex multi-modal logistics, MMI Logitek Fzco delivers reliable freight forwarding solutions tailored to your business needs.</p>
+            <p>At MMI Logitek, we don't just move cargo —we move your business forward. No matter the size, type, or destination of your shipment, we are here to deliver excellence, reliability, and value.</p>
         </div>
     </section>
 
