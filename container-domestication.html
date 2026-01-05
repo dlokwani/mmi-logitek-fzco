@@ -339,6 +339,7 @@
             height: 60vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
         
@@ -349,6 +350,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            z-index: 1;
         }
         
         .hero-overlay {
@@ -357,23 +359,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.75) 100%);
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(42, 82, 152, 0.85) 100%);
+            z-index: 2;
         }
         
         .hero-content {
             position: relative;
-            z-index: 2;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            z-index: 3;
+            text-align: center;
             color: white;
+            max-width: 1200px;
+            padding: 0 2rem;
         }
         
         .hero-title {
             font-size: 4rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .content-section {
@@ -386,10 +389,17 @@
             margin: 0 auto;
         }
         
+        .content-container p {
+            color: #666;
+            line-height: 1.9;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
         .content-container h2 {
             font-size: 2.5rem;
             color: #1e3c72;
-            margin-bottom: 2rem;
+            margin: 3rem 0 1.5rem;
             font-weight: 700;
         }
         
@@ -399,47 +409,52 @@
         
         .content-container h3 {
             font-size: 1.8rem;
-            color: #1e3c72;
-            margin: 2rem 0 1rem;
+            color: #2a5298;
+            margin: 2.5rem 0 1.5rem;
             font-weight: 600;
         }
         
-        .content-container p {
-            color: #666;
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-        
         .content-container ul {
-            list-style: none;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
+            padding-left: 2rem;
         }
         
-        .content-container ul li {
+        .content-container li {
             color: #666;
             line-height: 1.9;
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
             font-size: 1.1rem;
+            margin-bottom: 0.8rem;
         }
         
-        .content-container ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #ff6b35;
-            font-weight: bold;
-            font-size: 1.3rem;
+        .content-container strong {
+            color: #1e3c72;
+            font-weight: 600;
         }
         
         .highlight-box {
-            background: #f8f9fa;
-            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2.5rem;
             border-radius: 15px;
-            border-left: 4px solid #ff6b35;
-            margin: 2rem 0;
+            margin: 3rem 0;
+            border-left: 5px solid #ff6b35;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .highlight-box h3 {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .highlight-box ul {
+            margin: 0;
+            padding-left: 2rem;
+        }
+        
+        .highlight-box li {
+            margin-bottom: 1rem;
+            color: #555;
         }
         
         .contact-section {
@@ -690,64 +705,42 @@
 
     <section class="content-section">
         <div class="content-container">
-            <p>MMI Logitek Fzco offers specialized Container Domestication Services to help businesses convert international shipping containers into domestic-use containers, ensuring full compliance with local regulations and customs requirements.</p>
+            <p>Container domestication is the process of converting an international shipping container into a locally registered unit for domestic use. This involves the legal nationalization of containers, allowing them to operate within the internal logistics network of a country without international documentation constraints.</p>
+            
+            <p>At Millenium Marine International, we are a trusted name in container domestication, with a proven track record and expertise built over the past 8 years.</p>
 
-            <h2>What is Container <span>Domestication?</span></h2>
-            <p>Container domestication is the process of converting an imported shipping container from international status to domestic status. This allows the container to be used freely within the country for storage, transportation, or other purposes without being subject to customs restrictions or re-export obligations.</p>
-
-            <h2>Why Domesticate <span>a Container?</span></h2>
+            <h2>Our Domestication <span>Expertise</span></h2>
+            <p>We have successfully handled the domestication of over 2000 TEUs from major Indian ports including:</p>
             <ul>
-                <li>Avoid customs penalties and demurrage charges</li>
-                <li>Use containers for long-term domestic storage or transport</li>
-                <li>Convert containers into permanent structures (offices, warehouses, etc.)</li>
-                <li>Eliminate the need to re-export empty containers</li>
-                <li>Gain full ownership and control over the container</li>
+                <li>Mundra Port</li>
+                <li>Nhava Sheva (JNPT)</li>
+            </ul>
+            
+            <p>Our experienced team ensures:</p>
+            <ul>
+                <li>Seamless coordination with shipping lines and port authorities if needed</li>
+                <li>Proper documentation and regulatory compliance</li>
+                <li>Fast turnaround times for nationalization</li>
+                <li>Cost-effective handling of large volumes</li>
             </ul>
 
-            <h2>Our Container Domestication <span>Process</span></h2>
-            <p>We handle the entire domestication process from start to finish:</p>
-            <ul>
-                <li>Assessment of container eligibility and condition</li>
-                <li>Preparation and submission of required documentation</li>
-                <li>Coordination with customs authorities</li>
-                <li>Payment of applicable duties and taxes</li>
-                <li>Issuance of domestication certificates</li>
-                <li>Final clearance and release of containers</li>
-            </ul>
-
-            <h3>Documentation Required</h3>
-            <ul>
-                <li>Original Bill of Lading (B/L)</li>
-                <li>Commercial Invoice</li>
-                <li>Packing List</li>
-                <li>Import License (if applicable)</li>
-                <li>Container ownership documents</li>
-                <li>Customs declaration forms</li>
-            </ul>
+            <h2>Trusted by Industry <span>Leaders</span></h2>
+            <p>We proudly serve and have ongoing partnerships with some of the most reputable container leasing and logistics companies.</p>
+            
+            <p>We can proudly say we have handled the domestication of over 1000 TEUs during Financial Year 2024–2025 of our reputed customers with trust and assurance.</p>
 
             <div class="highlight-box">
-                <h3>Benefits of Our Service</h3>
+                <h3>Why Choose our Service</h3>
                 <ul>
-                    <li>Expert knowledge of local customs regulations</li>
-                    <li>Fast processing and minimal delays</li>
-                    <li>Transparent pricing with no hidden costs</li>
-                    <li>End-to-end support and documentation handling</li>
-                    <li>Compliance assurance and legal protection</li>
-                    <li>Post-domestication support and guidance</li>
+                    <li>Over 8 years of experience in container domestication</li>
+                    <li>Strong working relationships with major port operators and logistics networks</li>
+                    <li>Dedicated team to handle compliance, approvals, and logistics</li>
+                    <li>Scalable operations with pan-India expansion plans</li>
+                    <li>Trusted by leading global and national logistics providers</li>
                 </ul>
             </div>
 
-            <h2>Industries We <span>Serve</span></h2>
-            <ul>
-                <li>Construction companies needing on-site storage</li>
-                <li>Logistics providers managing container fleets</li>
-                <li>Retailers requiring permanent storage solutions</li>
-                <li>Event management companies</li>
-                <li>Agricultural and industrial sectors</li>
-                <li>Government and military projects</li>
-            </ul>
-
-            <p>Whether you need to domesticate a single container or an entire fleet, MMI Logitek Fzco provides reliable, efficient, and compliant container domestication services tailored to your business needs.</p>
+            <p>Whether you are a container leasing company, a logistics service provider, or a corporate importer, Millenium Marine International is your go-to partner for efficient and compliant container domestication services across India.</p>
         </div>
     </section>
 
