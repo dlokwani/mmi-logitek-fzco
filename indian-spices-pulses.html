@@ -105,15 +105,15 @@
       "@type": "ItemList",
       "@id": "https://dlokwani.github.io/mmi-logitek-fzco/indian-spices-pulses.html#spices",
       "name": "Indian Spices Catalog",
-      "description": "Premium Indian spices for bulk export including turmeric, cumin, coriander, cardamom, red chilli, and more",
-      "numberOfItems": 27,
+      "description": "Premium Indian spices for bulk export including turmeric, cumin, coriander, cardamom, and more",
+      "numberOfItems": 26,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "item": {
             "@type": "Product",
-            "name": "Turmeric Powder (Haldi)",
+            "name": "Cardamom Powder इलायची पाउडर",
             "category": "Spices"
           }
         },
@@ -122,7 +122,7 @@
           "position": 2,
           "item": {
             "@type": "Product",
-            "name": "Cumin Seeds (Jeera)",
+            "name": "Coriander Seeds",
             "category": "Spices"
           }
         },
@@ -131,7 +131,7 @@
           "position": 3,
           "item": {
             "@type": "Product",
-            "name": "Red Chilli Powder",
+            "name": "Cardamom इलायची - 8mm",
             "category": "Spices"
           }
         },
@@ -140,7 +140,7 @@
           "position": 4,
           "item": {
             "@type": "Product",
-            "name": "Coriander Seeds (Dhania)",
+            "name": "Coriander/Dhanya Powder",
             "category": "Spices"
           }
         },
@@ -149,7 +149,7 @@
           "position": 5,
           "item": {
             "@type": "Product",
-            "name": "Cardamom (Elaichi)",
+            "name": "Cumin Seeds",
             "category": "Spices"
           }
         }
@@ -160,14 +160,14 @@
       "@id": "https://dlokwani.github.io/mmi-logitek-fzco/indian-spices-pulses.html#pulses",
       "name": "Indian Pulses Catalog",
       "description": "Premium Indian pulses for bulk export including chickpeas, lentils, pigeon peas, mung beans, and more",
-      "numberOfItems": 16,
+      "numberOfItems": 15,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "item": {
             "@type": "Product",
-            "name": "Chickpeas - Kabuli Chana",
+            "name": "Split Pigeon Peas/Toor Dal",
             "category": "Pulses"
           }
         },
@@ -176,7 +176,7 @@
           "position": 2,
           "item": {
             "@type": "Product",
-            "name": "Red Lentils - Masoor Dal",
+            "name": "Split Black Gram / Urad Dal",
             "category": "Pulses"
           }
         },
@@ -185,7 +185,7 @@
           "position": 3,
           "item": {
             "@type": "Product",
-            "name": "Pigeon Peas - Toor Dal",
+            "name": "Mung Beans",
             "category": "Pulses"
           }
         },
@@ -194,7 +194,7 @@
           "position": 4,
           "item": {
             "@type": "Product",
-            "name": "Mung Beans - Moong Dal",
+            "name": "Red Lentils/Masoor Dal",
             "category": "Pulses"
           }
         },
@@ -203,7 +203,7 @@
           "position": 5,
           "item": {
             "@type": "Product",
-            "name": "Black Gram - Urad Dal",
+            "name": "Red Split Lentils",
             "category": "Pulses"
           }
         }
@@ -252,23 +252,21 @@
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
-            overflow-x: hidden;
         }
         
         .navbar {
-            position: fixed;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 1rem 0;
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             z-index: 1000;
-            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .nav-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -277,69 +275,46 @@
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            z-index: 1001;
         }
         
         .logo-link {
             display: flex;
             align-items: center;
-            gap: 1rem;
             text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
-        
-        .logo-link:hover {
-            opacity: 0.8;
+            gap: 1rem;
         }
         
         .logo-img {
-            height: 60px;
+            height: 50px;
             width: auto;
+            border-radius: 8px;
         }
         
         .logo-text h2 {
+            color: white;
             font-size: 1.5rem;
-            color: #1e3c72;
             font-weight: 700;
         }
         
-        /* Hamburger Menu Styles */
         .hamburger-menu {
             display: none;
             flex-direction: column;
             cursor: pointer;
             z-index: 1001;
-            position: relative;
-            width: 30px;
-            height: 24px;
-            justify-content: space-between;
         }
         
         .hamburger-line {
-            width: 100%;
+            width: 25px;
             height: 3px;
-            background: #1e3c72;
-            transition: 0.4s;
-            border-radius: 3px;
-        }
-        
-        .hamburger-menu.active .hamburger-line:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-        
-        .hamburger-menu.active .hamburger-line:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger-menu.active .hamburger-line:nth-child(3) {
-            transform: rotate(-45deg) translate(8px, -8px);
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.3s;
         }
         
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2rem;
             align-items: center;
         }
         
@@ -347,36 +322,16 @@
             position: relative;
         }
         
-        .nav-menu li a {
-            color: #333;
+        .nav-menu a {
+            color: white;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
-            display: block;
+            transition: color 0.3s;
+            cursor: pointer;
         }
         
-        .nav-menu li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-menu li a:hover::after,
-        .nav-menu li a.active::after {
-            width: 100%;
-        }
-        
-        .nav-menu li a:hover,
-        .nav-menu li a.active {
-            color: #ff6b35;
+        .nav-menu a:hover {
+            color: #ffd700;
         }
         
         .dropdown {
@@ -384,125 +339,75 @@
         }
         
         .dropdown-menu {
+            display: none;
             position: absolute;
             top: 100%;
             left: 0;
             background: white;
-            min-width: 280px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            border-radius: 10px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            margin-top: 0.5rem;
+            min-width: 250px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
             padding: 0.5rem 0;
+            margin-top: 0.5rem;
+            z-index: 1000;
         }
         
         .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
+            display: block;
         }
         
         .dropdown-menu li {
             list-style: none;
-            opacity: 0;
-            transform: translateX(-20px);
-            animation: slideIn 0.3s ease forwards;
         }
         
-        .dropdown:hover .dropdown-menu li:nth-child(1) { animation-delay: 0.05s; }
-        .dropdown:hover .dropdown-menu li:nth-child(2) { animation-delay: 0.1s; }
-        .dropdown:hover .dropdown-menu li:nth-child(3) { animation-delay: 0.15s; }
-        .dropdown:hover .dropdown-menu li:nth-child(4) { animation-delay: 0.2s; }
-        .dropdown:hover .dropdown-menu li:nth-child(5) { animation-delay: 0.25s; }
-        .dropdown:hover .dropdown-menu li:nth-child(6) { animation-delay: 0.3s; }
-        .dropdown:hover .dropdown-menu li:nth-child(7) { animation-delay: 0.35s; }
-        .dropdown:hover .dropdown-menu li:nth-child(8) { animation-delay: 0.4s; }
-        
-        @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .dropdown-menu li a {
+        .dropdown-menu a {
+            color: #333;
             padding: 0.8rem 1.5rem;
             display: block;
-            color: #333;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s;
         }
         
-        .dropdown-menu li a::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .dropdown-menu li a::after {
-            display: none;
-        }
-        
-        .dropdown-menu li a:hover {
-            background: linear-gradient(90deg, rgba(255, 107, 53, 0.1) 0%, transparent 100%);
-            color: #ff6b35;
+        .dropdown-menu a:hover {
+            background: #f0f0f0;
+            color: #1e3c72;
             padding-left: 2rem;
-            transform: translateX(5px);
-        }
-        
-        .dropdown-menu li a:hover::before {
-            transform: scaleY(1);
         }
         
         .hero {
-            margin-top: 90px;
             position: relative;
             height: 60vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
         
         .hero-image {
             position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.7);
+            filter: brightness(0.6);
         }
         
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 1;
             text-align: center;
-            width: 100%;
+            color: white;
             padding: 2rem;
         }
         
         .hero-title {
             font-size: 3.5rem;
-            color: white;
             font-weight: 800;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
         .content-section {
-            padding: 6rem 2rem;
-            background: #f8f9fa;
+            padding: 4rem 2rem;
+            background: #f9f9f9;
         }
         
         .content-container {
@@ -511,17 +416,19 @@
         }
         
         .content-container h2 {
-            font-size: 2.2rem;
             color: #1e3c72;
-            margin: 3rem 0 1.5rem;
-            font-weight: 600;
+            font-size: 2rem;
+            margin: 2rem 0 1.5rem 0;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 0.5rem;
+            display: inline-block;
         }
         
         .content-container p {
-            color: #666;
-            line-height: 1.9;
             font-size: 1.1rem;
+            line-height: 1.8;
             margin-bottom: 1.5rem;
+            color: #555;
         }
         
         .content-container ul {
@@ -530,58 +437,56 @@
         }
         
         .content-container li {
-            color: #666;
-            line-height: 1.9;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-bottom: 0.8rem;
+            color: #555;
         }
         
         .content-container strong {
             color: #1e3c72;
-            font-weight: 600;
         }
         
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
             margin: 2rem 0;
         }
         
         .product-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
         }
         
         .product-image {
             width: 100%;
-            height: 250px;
+            height: 200px;
             object-fit: cover;
         }
         
         .product-info {
-            padding: 1.5rem;
+            padding: 1rem;
             text-align: center;
         }
         
         .product-name {
-            font-size: 1.2rem;
-            color: #1e3c72;
+            font-size: 0.95rem;
+            color: #333;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            line-height: 1.4;
         }
         
         .contact-section {
-            background: #f8f9fa;
-            padding: 6rem 2rem;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
         }
         
         .contact-container {
@@ -591,161 +496,148 @@
         
         .contact-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
         
         .contact-header h2 {
+            color: white;
             font-size: 2.5rem;
-            color: #1e3c72;
-            margin-bottom: 1rem;
-            font-weight: 700;
+            margin-bottom: 0.5rem;
         }
         
-        .contact-header h2 span {
-            color: #ff6b35;
+        .contact-header span {
+            color: #ffd700;
         }
         
         .contact-header p {
-            font-size: 1.2rem;
-            color: #666;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
         }
         
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
         
         .contact-card {
-            background: white;
-            padding: 2.5rem;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             text-align: center;
-            transition: all 0.3s ease;
+            transition: transform 0.3s;
         }
         
         .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
         }
         
         .contact-icon {
             width: 60px;
             height: 60px;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
         .contact-icon svg {
-            width: 100%;
-            height: 100%;
-            fill: #ff6b35;
+            width: 30px;
+            height: 30px;
+            fill: white;
         }
         
         .contact-card h3 {
+            color: white;
             font-size: 1.3rem;
-            color: #1e3c72;
-            margin-bottom: 1rem;
-            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
         
-        .contact-card p,
+        .contact-card p {
+            margin: 0;
+        }
+        
         .contact-card a {
-            color: #666;
-            font-size: 1.1rem;
+            color: #ffd700;
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-weight: 500;
+            transition: color 0.3s;
         }
         
         .contact-card a:hover {
-            color: #ff6b35;
+            color: white;
         }
         
         .footer {
-            background: #0a1929;
+            background: #1a1a1a;
             color: white;
-            padding: 1.5rem 2rem;
             text-align: center;
+            padding: 2rem;
         }
         
-        .footer p {
-            opacity: 0.8;
-            font-size: 0.95rem;
-        }
-        
-        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .nav-container {
-                padding: 0.8rem 1.5rem;
-            }
-            
-            .logo-img {
-                height: 45px;
-            }
-            
-            .logo-text h2 {
-                font-size: 1.2rem;
-            }
-            
-            /* Show hamburger menu on mobile */
             .hamburger-menu {
                 display: flex;
             }
             
-            /* Hide desktop menu, show mobile menu */
+            .hamburger-menu.active .hamburger-line:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .hamburger-menu.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger-menu.active .hamburger-line:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            
             .nav-menu {
                 position: fixed;
-                right: -100%;
+                left: -100%;
                 top: 70px;
                 flex-direction: column;
-                background-color: white;
-                width: 280px;
-                height: calc(100vh - 70px);
-                text-align: left;
-                transition: 0.4s ease-in-out;
-                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-                gap: 0;
+                background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
                 padding: 2rem 0;
-                overflow-y: auto;
+                gap: 0;
+                align-items: stretch;
             }
             
             .nav-menu.active {
-                right: 0;
+                left: 0;
             }
             
             .nav-menu li {
                 margin: 0;
-                width: 100%;
             }
             
             .nav-menu li a {
-                padding: 1rem 1.5rem;
+                padding: 1rem;
                 display: block;
-                font-size: 1.05rem;
-                border-bottom: 1px solid #f0f0f0;
             }
             
-            .nav-menu li a::after {
-                display: none;
-            }
-            
-            /* Mobile dropdown styles */
             .dropdown-menu {
                 position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
+                display: none;
                 box-shadow: none;
-                background: #f8f9fa;
+                background: rgba(0,0,0,0.1);
                 margin-top: 0;
-                border-radius: 0;
                 max-height: 0;
                 overflow: hidden;
-                transition: max-height 0.3s ease;
-                pointer-events: auto;
+                transition: max-height 0.3s ease-out;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                display: block;
+                max-height: 500px;
             }
             
             .dropdown.active .dropdown-menu {
@@ -929,6 +821,13 @@
                 </div>
                 
                 <div class="product-card">
+                    <img src="https://placeholder-image-url.jpg" alt="Bay Leafs" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Bay Leafs</h3>
+                    </div>
+                </div>
+                
+                <div class="product-card">
                     <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T10-59-07-785Z-e0e0e0e0-chat-image-1767351547766-3.jpg" alt="Fenugreek Powder मेथी पाउडर" class="product-image">
                     <div class="product-info">
                         <h3 class="product-name">Fenugreek Powder मेथी पाउडर</h3>
@@ -936,72 +835,9 @@
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-02-42-878Z-e0e0e0e0-chat-image-1767351762859-0.jpg" alt="Turmeric Powder हल्दी पाउडर" class="product-image">
+                    <img src="https://placeholder-image-url.jpg" alt="Nutmeg जायफल" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Turmeric Powder हल्दी पाउडर</h3>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-02-42-978Z-e0e0e0e0-chat-image-1767351762959-1.jpg" alt="Turmeric हल्दी" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Turmeric हल्दी</h3>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-02-43-078Z-e0e0e0e0-chat-image-1767351763059-2.jpg" alt="Cloves लौंग" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Cloves लौंग</h3>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-02-43-178Z-e0e0e0e0-chat-image-1767351763159-3.jpg" alt="Clove Powder लौंग पाउडर" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Clove Powder लौंग पाउडर</h3>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-06-18-294Z-e0e0e0e0-chat-image-1767351978275-0.jpg" alt="Cinnamon Powder दालचीनी पाउडर" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Cinnamon Powder दालचीनी पाउडर</h3>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-06-18-394Z-e0e0e0e0-chat-image-1767351978375-1.jpg" alt="Cinnamon दालचीनी" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Cinnamon दालचीनी</h3>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-06-18-494Z-e0e0e0e0-chat-image-1767351978475-2.jpg" alt="Black Pepper काली मिर्च" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Black Pepper काली मिर्च</h3>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-06-18-594Z-e0e0e0e0-chat-image-1767351978575-3.jpg" alt="Black Pepper Powder काली मिर्च पाउडर" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Black Pepper Powder काली मिर्च पाउडर</h3>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-09-53-710Z-e0e0e0e0-chat-image-1767352193691-0.jpg" alt="Red Chilli Powder लाल मिर्च पाउडर" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Red Chilli Powder लाल मिर्च पाउडर</h3>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-09-53-810Z-e0e0e0e0-chat-image-1767352193791-1.jpg" alt="Red Chilli लाल मिर्च" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Red Chilli लाल मिर्च</h3>
+                        <h3 class="product-name">Nutmeg जायफल</h3>
                     </div>
                 </div>
                 
@@ -1013,30 +849,79 @@
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-09-54-010Z-e0e0e0e0-chat-image-1767352193991-3.jpg" alt="Ginger Powder अदरक पाउडर" class="product-image">
+                    <img src="https://placeholder-image-url.jpg" alt="Asafoetida/Heeng Powder हींग पाउडर" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Ginger Powder अदरक पाउडर</h3>
+                        <h3 class="product-name">Asafoetida/Heeng Powder हींग पाउडर</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-13-29-126Z-e0e0e0e0-chat-image-1767352409107-0.jpg" alt="Ginger अदरक" class="product-image">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-06-18-294Z-e0e0e0e0-chat-image-1767351978275-0.jpg" alt="Cinnamon Powder दालचीनी पूरा" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Ginger अदरक</h3>
+                        <h3 class="product-name">Cinnamon Powder दालचीनी पूरा</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-13-29-226Z-e0e0e0e0-chat-image-1767352409207-1.jpg" alt="Garlic Powder लहसुन पाउडर" class="product-image">
+                    <img src="https://placeholder-image-url.jpg" alt="Cinnamon Sticks दालचीनी की छड़ें" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Garlic Powder लहसुन पाउडर</h3>
+                        <h3 class="product-name">Cinnamon Sticks दालचीनी की छड़ें</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-13-29-326Z-e0e0e0e0-chat-image-1767352409307-2.jpg" alt="Garlic लहसुन" class="product-image">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-02-42-878Z-e0e0e0e0-chat-image-1767351762859-0.jpg" alt="Turmeric/Haldi Powder" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Garlic लहसुन</h3>
+                        <h3 class="product-name">Turmeric/Haldi Powder</h3>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-02-43-078Z-e0e0e0e0-chat-image-1767351763059-2.jpg" alt="Cloves लौंग" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Cloves लौंग</h3>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://placeholder-image-url.jpg" alt="Cinnamon Leafs" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Cinnamon Leafs</h3>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://placeholder-image-url.jpg" alt="Fennel Powder सौंफ पाउडर" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Fennel Powder सौंफ पाउडर</h3>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://placeholder-image-url.jpg" alt="Nutmeg Powder जायफल पाउडर" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Nutmeg Powder जायफल पाउडर</h3>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://placeholder-image-url.jpg" alt="Fennel Seeds सौंफ बीज" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Fennel Seeds सौंफ बीज</h3>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://placeholder-image-url.jpg" alt="Saffron" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Saffron</h3>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-02-43-178Z-e0e0e0e0-chat-image-1767351763159-3.jpg" alt="Clove Powder लौंग पाउडर" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Clove Powder लौंग पाउडर</h3>
                     </div>
                 </div>
             </div>
@@ -1045,114 +930,107 @@
             
             <div class="products-grid">
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-17-04-542Z-e0e0e0e0-chat-image-1767352624523-0.jpg" alt="Chickpeas - Kabuli Chana काबुली चना" class="product-image">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-17-04-842Z-e0e0e0e0-chat-image-1767352624823-3.jpg" alt="Split Pigeon Peas/Toor Dal" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Chickpeas - Kabuli Chana काबुली चना</h3>
+                        <h3 class="product-name">Split Pigeon Peas/Toor Dal</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-17-04-642Z-e0e0e0e0-chat-image-1767352624623-1.jpg" alt="Chickpeas - Desi Chana देसी चना" class="product-image">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-20-40-058Z-e0e0e0e0-chat-image-1767352840039-1.jpg" alt="Split Black Gram / Urad Dal" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Chickpeas - Desi Chana देसी चना</h3>
+                        <h3 class="product-name">Split Black Gram / Urad Dal</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-17-04-742Z-e0e0e0e0-chat-image-1767352624723-2.jpg" alt="Red Lentils - Masoor Dal मसूर दाल" class="product-image">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-20-39-958Z-e0e0e0e0-chat-image-1767352839939-0.jpg" alt="Mung Beans" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Red Lentils - Masoor Dal मसूर दाल</h3>
+                        <h3 class="product-name">Mung Beans</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-17-04-842Z-e0e0e0e0-chat-image-1767352624823-3.jpg" alt="Pigeon Peas - Toor Dal तूर दाल" class="product-image">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-17-04-742Z-e0e0e0e0-chat-image-1767352624723-2.jpg" alt="Red Lentils/Masoor Dal" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Pigeon Peas - Toor Dal तूर दाल</h3>
+                        <h3 class="product-name">Red Lentils/Masoor Dal</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-20-39-958Z-e0e0e0e0-chat-image-1767352839939-0.jpg" alt="Mung Beans - Moong Dal मूंग दाल" class="product-image">
+                    <img src="https://placeholder-image-url.jpg" alt="Red Split Lentils" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Mung Beans - Moong Dal मूंग दाल</h3>
+                        <h3 class="product-name">Red Split Lentils</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-20-40-058Z-e0e0e0e0-chat-image-1767352840039-1.jpg" alt="Black Gram - Urad Dal उड़द दाल" class="product-image">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-24-15-674Z-e0e0e0e0-chat-image-1767353055655-3.jpg" alt="Moth Bean" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Black Gram - Urad Dal उड़द दाल</h3>
+                        <h3 class="product-name">Moth Bean</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-20-40-158Z-e0e0e0e0-chat-image-1767352840139-2.jpg" alt="Kidney Beans - Rajma राजमा" class="product-image">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-24-15-574Z-e0e0e0e0-chat-image-1767353055555-2.jpg" alt="Horse Gram / Kulthi Dal" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Kidney Beans - Rajma राजमा</h3>
+                        <h3 class="product-name">Horse Gram / Kulthi Dal</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-20-40-258Z-e0e0e0e0-chat-image-1767352840239-3.jpg" alt="Cow Peas - Lobia लोबिया" class="product-image">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-17-04-542Z-e0e0e0e0-chat-image-1767352624523-0.jpg" alt="Chickpeas" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Cow Peas - Lobia लोबिया</h3>
+                        <h3 class="product-name">Chickpeas</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-24-15-374Z-e0e0e0e0-chat-image-1767353055355-0.jpg" alt="Green Peas - Matar मटर" class="product-image">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-20-40-158Z-e0e0e0e0-chat-image-1767352840139-2.jpg" alt="Kidney Beans" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Green Peas - Matar मटर</h3>
+                        <h3 class="product-name">Kidney Beans</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-24-15-474Z-e0e0e0e0-chat-image-1767353055455-1.jpg" alt="Bengal Gram - Chana Dal चना दाल" class="product-image">
+                    <img src="https://placeholder-image-url.jpg" alt="Black Lentils/Masoor Dal" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Bengal Gram - Chana Dal चना दाल</h3>
+                        <h3 class="product-name">Black Lentils/Masoor Dal</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-24-15-574Z-e0e0e0e0-chat-image-1767353055555-2.jpg" alt="Horse Gram - Kulthi Dal कुल्थी दाल" class="product-image">
+                    <img src="https://placeholder-image-url.jpg" alt="Black Chickpeas" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Horse Gram - Kulthi Dal कुल्थी दाल</h3>
+                        <h3 class="product-name">Black Chickpeas</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-24-15-674Z-e0e0e0e0-chat-image-1767353055655-3.jpg" alt="Moth Beans - Matki मटकी" class="product-image">
+                    <img src="https://placeholder-image-url.jpg" alt="Brown Lentils/Masoor Dal" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Moth Beans - Matki मटकी</h3>
+                        <h3 class="product-name">Brown Lentils/Masoor Dal</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-27-50-790Z-e0e0e0e0-chat-image-1767353270771-0.jpg" alt="Pinto Beans पिंटो बीन्स" class="product-image">
+                    <img src="https://placeholder-image-url.jpg" alt="Black-Eyed Peas" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Pinto Beans पिंटो बीन्स</h3>
+                        <h3 class="product-name">Black-Eyed Peas</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-27-50-890Z-e0e0e0e0-chat-image-1767353270871-1.jpg" alt="Lima Beans लीमा बीन्स" class="product-image">
+                    <img src="https://placeholder-image-url.jpg" alt="Adzuki Beans" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Lima Beans लीमा बीन्स</h3>
+                        <h3 class="product-name">Adzuki Beans</h3>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-27-50-990Z-e0e0e0e0-chat-image-1767353270971-2.jpg" alt="Navy Beans नेवी बीन्स" class="product-image">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-27-51-090Z-e0e0e0e0-chat-image-1767353271071-3.jpg" alt="Black Beans" class="product-image">
                     <div class="product-info">
-                        <h3 class="product-name">Navy Beans नेवी बीन्स</h3>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/ab593dcd-8d17-4147-aff4-a2a07c645eca/2026-01-02T11-27-51-090Z-e0e0e0e0-chat-image-1767353271071-3.jpg" alt="Black Beans काली बीन्स" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Black Beans काली बीन्स</h3>
+                        <h3 class="product-name">Black Beans</h3>
                     </div>
                 </div>
             </div>
